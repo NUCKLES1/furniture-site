@@ -10,10 +10,10 @@ const Section3 = () => {
                 <p className='text-7xl max-sm:text-5xl ml-[10%] mt-2 max-sm:ml-0 bold text-[#231f20]'>I CREATE, YOUR IMAGINATIONS</p>
             </div>
             <div className='flex max-sm:block max-sm:text-center w-full h-[30rem]'>
-            <div className='w-[30%] max-sm:w-full md:w-[60%] max-sm:mt-28 h-full'>
+            <div className='w-[30%] max-sm:w-full max-md:w-[60%] max-sm:mt-28 h-full'>
                     <Image src={boy} alt='' className='w-full h-full object-cover' />
                 </div>
-                <p className='text-7xl ml-[26%] max-sm:ml-0 max-sm:mt-[-145%] md:ml-[1rem]  max-sm:text-5xl bold text-[#231f20]'>WITH A TASTE<br />OF DEJA-VU.</p>
+                <p className='text-7xl ml-[26%] max-sm:ml-0 max-sm:mt-[-145%] max-md:ml-[1rem]  max-sm:text-5xl bold text-[#231f20]'>WITH A TASTE<br />OF DEJA-VU.</p>
             </div>
             <div className='relative text-left max-sm:w-full w-[43%] max-sm:mt-10 mt-[-4rem] max-sm:ml-0 ml-[40%]'>
                 <p className='text-[#231f20] texty max-sm:text-[2rem] text-left'>
