@@ -5,9 +5,10 @@ const Section = () => {
     return (
         <div className='w-full h-[100vh]'>
             <div className='h-full w-full max-sm:h-[100vh]'>
+
             </div>
             <div className='absolute w-full h-full justify-center text-center max-sm:top-0 top-10'>
-                <p className='bigi text-[150px] max-md:text-[85px] max-sm:text-[40px]'>NUCKLES DAAN</p>
+                <p className='bigi text-[150px] md:text-[85px] max-sm:text-[40px]'>NUCKLES DAAN</p>
                 <ul className='w-full items-center md:hidden justify-center text-center tiny flex'>
                     <li className='pt-5 cursor-pointer text-center'>SHOP</li>
                     <li className='ml-8 pt-5 cursor-pointer text-center'>ABOUT</li>
