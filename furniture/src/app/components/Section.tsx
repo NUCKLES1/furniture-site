@@ -5,6 +5,7 @@ const Section = () => {
     return (
         <div className='w-full h-[100vh]'>
             <div className='h-full w-full max-sm:h-[100vh]'>
+
             </div>
             <div className='absolute w-full h-full justify-center text-center max-sm:top-0 top-10'>
                 <p className='bigi text-[150px] md:text-[85px] max-sm:text-[40px]'>NUCKLES DAAN</p>
