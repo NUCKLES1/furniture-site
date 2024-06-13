@@ -9,7 +9,8 @@ const Section = () => {
     return (
         <div className='w-full h-[100vh]'>
             <div className='h-full w-full max-sm:h-[100vh]'>
-           <BackgroundVideo src={'https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm'} className='max-sm:h-[100vh]' autoPlay muted loop/> 
+                <BackgroundVideo src='https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm' className='max-sm:h-[100vh] max-md:hidden' autoPlay muted loop/>
+                <video src='https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm' className='max-sm:h-[100vh] hidden max-sm:hidden' autoPlay muted loop/>
             </div>
             <div className='absolute w-full h-full justify-center text-center max-sm:top-0 top-10'>
                 <p className='bigi text-[143px] max-md:text-[85px] max-sm:text-[40px]'>NUCKLES DAAN</p>
