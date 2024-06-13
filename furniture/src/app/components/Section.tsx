@@ -2,14 +2,14 @@
 import NextVideo from 'next-video'
 import React from 'react'
 import twitter from 'https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm'
-import BackgroundPlayer from 'next-video/background-player'
+import BackgroundVideo from 'next-video/background-video'
 
 
 const Section = () => {
     return (
         <div className='w-full h-[100vh]'>
             <div className='h-full w-full max-sm:h-[100vh]'>
-           <BackgroundPlayer src='https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm' autoplay/> 
+           <BackgroundVideo src={'https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm'} className='max-sm:h-[100vh]'/> 
             </div>
             <div className='absolute w-full h-full justify-center text-center max-sm:top-0 top-10'>
                 <p className='bigi text-[143px] max-md:text-[85px] max-sm:text-[40px]'>NUCKLES DAAN</p>
