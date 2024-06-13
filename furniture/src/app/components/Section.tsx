@@ -12,7 +12,7 @@ const Section = () => {
                 <BackgroundVideo src='https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm' className='max-sm:h-[100vh]' autoPlay muted loop/>
             </div>
             <div className='absolute w-full h-full justify-center text-center max-sm:top-0 top-10'>
-                <p className='bigi text-[143px] max-md:text-[50px] max-sm:text-[40px]'>NUCKLES DAAN</p>
+                <p className='bigi text-[143px] max-md:text-[10px] max-sm:text-[40px]'>NUCKLES DAAN</p>
                 <ul className='w-full items-center max-md:mt-[-1rem] justify-center text-center tiny flex'>
                     <li className='pt-5 cursor-pointer text-center'>SHOP</li>
                     <li className='ml-8 pt-5 cursor-pointer text-center'>ABOUT</li>
