@@ -24,14 +24,14 @@ const Footer = () => {
                 </ul>
             </div>
             <div className='flex relative w-full justify-between top-[-65%]'>
-            <p className='text-[#231f20] bold text-[10.5rem]'>LYON</p>
-            <p className='text-[#231f20] bold text-[10.5rem]'>BETHON</p>
+            <p className='text-[#231f20] bold max-md:text-[75px] text-[10.5rem]'>LYON</p>
+            <p className='text-[#231f20] bold max-md:text-[75px] text-[10.5rem]'>BETHON</p>
             </div>
-            <ul className='flex relative ml-2 underline text-[#231f20] top-[-70%] bold text-[8px]'>
+            <ul className='flex relative max-md:w-[98%] ml-2 underline text-[#231f20] top-[-70%] bold text-[8px]'>
                 <li>T&C</li>
                 <li className='pl-[24%]'>LEGAL NOTICE</li>
-                <li className='pl-[10%]'>QUALITY AND CSR</li>
-                <li className='pl-[36%]'>NEWSLETTER</li>
+                <li className='pl-[10%] max-md:pl-[5%]'>QUALITY AND CSR</li>
+                <li className='pl-[36%] max-md:pl-[24%]'>NEWSLETTER</li>
                 <li className='pl-[8%]'>INSTAGRAM</li>
             </ul>
         </div>

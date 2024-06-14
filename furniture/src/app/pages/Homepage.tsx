@@ -9,7 +9,14 @@ import Section5 from '../components/Section5'
 import Section6 from '../components/Section6'
 
 const Homepage = () => {
-
+  useEffect( () => {
+    (
+      async () => {
+        const LocomotiveScroll = (await import('locomotive-scroll')).default;
+        const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
+  },[])
   return (
     <div className='w-full h-full bg-[#ebebeb] overflow-hidden'>
     <Nav />

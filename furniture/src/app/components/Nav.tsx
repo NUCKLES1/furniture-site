@@ -29,10 +29,10 @@ const Nav = () => {
     <p className='pt-5 tiny'>EN</p>
     </div>
     <div className='w-[15%] h-full bord hove'>
-    <CiSearch className='w-6 h-6 md:h-4 md:w-4 md:ml-2 md:mt-4 mt-[0.8rem] ml-[0.9rem]'/>
+    <CiSearch className='w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]'/>
     </div>
     <div className='w-[15%] h-full hove'>
-    <PiShoppingCartThin className='w-6 h-6 md:h-4 md:w-4 md:ml-2 md:mt-4 mt-[0.8rem] ml-[0.9rem]'/>
+    <PiShoppingCartThin className='w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]'/>
     </div>
     </div>
     </div>
