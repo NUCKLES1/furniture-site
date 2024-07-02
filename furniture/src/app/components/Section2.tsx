@@ -20,8 +20,8 @@ const Section2 = () => {
                         <p className='liney'>Dice</p>
                         <p className='text-[12px] mt-1'>Configuration 14</p>
                     </div>
-                    <Image src={dc1} width={200} height={200} alt='' className='mt-8 max-md:mt-[-2rem] cale ml-10 max-sm:ml-[24%] max-md:ml-0' />
-                    <div className='flex mt-14 conti ml-2'>
+                    <Image src={dc1} width={200} height={200} alt='' className='mt-8 max-md:mt-[-2rem] max-sm:mt-16 cale ml-10 max-sm:ml-[24%] max-md:ml-0' />
+                    <div className='flex mt-8 conti ml-2'>
                         <p className='text-[10px] bold mt-8'>EUR 4110</p>
                         <p className='ml-2 text-[10px] mt-8'>REF.DC-059</p>
                     </div>
@@ -32,8 +32,8 @@ const Section2 = () => {
                         <p className='liney'>Dice</p>
                         <p className='text-[12px] mt-1'>Configuration 14</p>
                     </div>
-                    <Image src={dc2} width={200} height={200} alt='' className='mt-8 max-md:mt-[-2rem] cale ml-10 max-sm:ml-[24%] max-md:ml-0' />
-                    <div className='flex mt-14 conti ml-2'>
+                    <Image src={dc2} width={200} height={200} alt='' className='mt-8 max-md:mt-[-2rem] max-sm:mt-16 cale ml-10 max-sm:ml-[24%] max-md:ml-0' />
+                    <div className='flex mt-8 conti ml-2'>
                         <p className='text-[10px] bold mt-8'>EUR 4110</p>
                         <p className='ml-2 text-[10px] mt-8'>REF.DC-059</p>
                     </div>
@@ -44,8 +44,8 @@ const Section2 = () => {
                         <p className='liney'>Dice</p>
                         <p className='text-[12px] mt-1'>Configuration 14</p>
                     </div>
-                    <Image src={dc3} width={200} height={200} alt='' className='mt-8 max-md:mt-[-2rem] cale ml-10 max-sm:ml-[24%] max-md:ml-0' />
-                    <div className='flex mt-14 conti ml-2'>
+                    <Image src={dc3} width={200} height={200} alt='' className='mt-8 max-md:mt-[-2rem] max-sm:mt-16 cale ml-10 max-sm:ml-[24%] max-md:ml-0' />
+                    <div className='flex mt-8 conti ml-2'>
                         <p className='text-[10px] mt-8 bold'>EUR 4110</p>
                         <p className='ml-2 text-[10px] mt-8'>REF.DC-059</p>
                     </div>
@@ -56,8 +56,8 @@ const Section2 = () => {
                         <p className='liney'>Dice</p>
                         <p className='text-[12px] mt-1'>Configuration 14</p>
                     </div>
-                    <Image src={dc4} width={200} height={200} alt='' className='mt-8 max-md:mt-[-2rem] cale ml-10 max-sm:ml-[24%] max-md:ml-0' />
-                    <div className='flex mt-12 conti ml-2'>
+                    <Image src={dc4} width={200} height={200} alt='' className='mt-8 max-md:mt-[-2rem] max-sm:mt-16 cale ml-10 max-sm:ml-[24%] max-md:ml-0' />
+                    <div className='flex mt-8 conti ml-2'>
                         <p className='text-[10px] mt-8 bold'>EUR 4110</p>
                         <p className='ml-2 text-[10px] mt-8'>REF.DC-059</p>
                     </div>

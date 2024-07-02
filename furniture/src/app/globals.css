@@ -82,6 +82,12 @@
   transition: ease-in-out 1s;
 }
 
+.hidy {
+  display: none;
+  transform: translateY(130%);
+  transition: ease-in-out 1s;
+}
+
 .hide-nav {
   transform: translateY(-130%);
   transition: ease-in-out 1s;
@@ -94,6 +100,11 @@
 .show:hover .hider {
  display: block;
  transform: translateY(0);
+}
+
+.show:hover .hidy {
+ display: block;
+ transform: translateY(-130%);
 }
 
 .bigi {
@@ -266,9 +277,6 @@ slide-track:hover {
   line-height: 14px;
 }
 
-.line-height-1{
- 
-}
 
 .do:hover .display{
   opacity: 1;
@@ -279,4 +287,20 @@ slide-track:hover {
   left: 30%;
   top: 486%;
  opacity: 0;
+}
+
+@media not all and (min-width: 640px) {
+  .cont {
+    position: relative;
+    transform: translateY(0px);
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .conti {
+    position: relative;
+    transform: translateY(0px);
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+  }
 }
