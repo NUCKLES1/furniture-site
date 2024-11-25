@@ -15,7 +15,7 @@ const Section2 = () => {
                 <p className='text-7xl max-sm:text-[7rem] bold text-[#231f20] max-sm:mt-[-110px]'>NOW</p>
             </div>
             <div className='w-full mt-12 flex ml-3 max-md:h-[45vh] max-md:w-[98%] max-sm:ml-0 max-sm:block max-sm:h-auto h-[60vh]'>
-                <div className='w-[24%] max-sm:w-[96%] max-sm:ml-2 max-sm:h-[25rem] h-full ima overflow-hidden bg-[#e3e3e3]'>
+                <div className='w-[24%] max-sm:w-[96%] max-sm:ml-3 max-sm:h-[25rem] h-full ima overflow-hidden bg-[#e3e3e3]'>
                     <div className='text-left pt-4 pl-2 text-[#231f20] cont'>
                         <p className='liney'>Dice</p>
                         <p className='text-[12px] mt-1'>Configuration 14</p>
@@ -26,7 +26,7 @@ const Section2 = () => {
                         <p className='ml-2 text-[10px] mt-8'>REF.DC-059</p>
                     </div>
                 </div>
-                <div className='w-[24%] max-sm:w-[96%] max-sm:ml-2 max-sm:h-[25rem]
+                <div className='w-[24%] max-sm:w-[96%] max-sm:ml-3 max-sm:h-[25rem]
                  h-full ima overflow-hidden ml-2 max-sm:mt-2 bg-[#e3e3e3]'>
                     <div className='text-left pt-4 pl-2 text-[#231f20] cont'>
                         <p className='liney'>Dice</p>
@@ -38,7 +38,7 @@ const Section2 = () => {
                         <p className='ml-2 text-[10px] mt-8'>REF.DC-059</p>
                     </div>
                 </div>
-                <div className='w-[24%] max-sm:w-[96%] max-sm:ml-2 max-sm:h-[25rem]
+                <div className='w-[24%] max-sm:w-[96%] max-sm:ml-3 max-sm:h-[25rem]
                  h-full ima overflow-hidden ml-2 max-sm:mt-2 bg-[#e3e3e3]'>
                     <div className='text-left pt-4 pl-2 text-[#231f20] cont'>
                         <p className='liney'>Dice</p>
@@ -50,7 +50,7 @@ const Section2 = () => {
                         <p className='ml-2 text-[10px] mt-8'>REF.DC-059</p>
                     </div>
                 </div>
-                <div className='w-[24%] max-sm:w-[96%] max-sm:ml-2 max-sm:h-[25rem]
+                <div className='w-[24%] max-sm:w-[96%] max-sm:ml-3 max-sm:h-[25rem]
                  h-full ima overflow-hidden ml-2 max-sm:mt-2 bg-[#e3e3e3]'>
                     <div className='text-left pt-4 pl-2 text-[#231f20] cont'>
                         <p className='liney'>Dice</p>

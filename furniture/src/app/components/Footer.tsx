@@ -27,7 +27,7 @@ const Footer = () => {
             <p className='text-[#231f20] bold max-md:text-[75px] text-[13rem] max-sm:text-[115px]'>LYON</p>
             <p className='text-[#231f20] bold max-sm:mt-[-5rem] max-sm:text-[115px] max-md:text-[75px] text-[13rem]'>BETHON</p>
             </div>
-            <ul className='flex relative max-md:w-[98%] ml-2 max-sm:ml-4 underline text-[#231f20] top-[-75%] bold text-[8px] max-sm:mt-14'>
+            <ul className='flex relative max-md:w-[98%] ml-2 max-sm:ml-4 underline text-[0.5em] text-[#231f20] top-[-75%] max-sm:mt-14'>
                 <li>T&C</li>
                 <li className='pl-[24%] max-sm:pl-4'>LEGAL NOTICE</li>
                 <li className='pl-[10%] max-md:pl-[5%] max-sm:pl-10'>QUALITY AND CSR</li>

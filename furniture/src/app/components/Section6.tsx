@@ -126,12 +126,12 @@ const Section6 = () => {
               sure you're not seated on the coffee table.</p>
           </div>
         </div>
-        <div className='w-full ml-[1%] max-sm:ml-0 mt-2 flex max-sm:block max-sm:h-auto h-[60vh] max-md:h-[45vh]'>
+        <div className='w-full ml-5 max-sm:ml-0 mt-2 flex max-sm:block max-sm:h-auto h-[60vh] max-md:h-[45vh]'>
           <div className='w-[24%] max-sm:w-[96%] max-sm:hidden max-sm:h-[25rem]
                  h-full ima overflow-hidden text-left text-[#231f20] max-sm:mt-2'>
             <button className='ml-2 tiny underline'>VIEW ALL STORAGES</button>
             <p className=' text-5xl bold ml-2 text-[#231f20] max-md:text-3xl mt-2'>STORAGES</p>
-            <p className='text-[10px] w-[70%] line ml-2 mt-[73%] max-md:mt-[12%] max-md:w-[90%]'>STORAGE: noun. Any kind of furnishing
+            <p className='text-[10px] w-[70%] line ml-2 mt-[70%] max-md:mt-[12%] max-md:w-[90%]'>STORAGE: noun. Any kind of furnishing
               that lets you show off the objects that inspire you -
               and keep out of sight the one that don't. If your
               storage solution looks
@@ -223,7 +223,7 @@ const Section6 = () => {
                  h-full ima overflow-hidden text-left text-[#231f20] max-sm:mt-2'>
             <button className='ml-2 tiny underline'>VIEW ALL FRAGS</button>
             <p className=' text-5xl max-md:text-3xl bold ml-2 text-[#231f20] mt-2'>FRAGS</p>
-            <p className='text-[10px] w-[70%] line ml-2 max-md:mt-[12%] max-md:w-[90%] mt-[73%]'>
+            <p className='text-[10px] w-[70%] line ml-2 max-md:mt-[12%] max-md:w-[90%] mt-[70%]'>
               FRAG: noun. 4 cm of raw concrete. A flat surface
               that is smooth to the touch, while retaining the
               raw look of concrete with its micro-bubbles and
