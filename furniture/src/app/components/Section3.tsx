@@ -15,8 +15,8 @@ const Section3 = () => {
                 </div>
                 <p className='text-7xl ml-[28%] text-right max-sm:text-center max-sm:ml-0 max-sm:mt-[-145%] max-md:ml-[1rem]  max-sm:text-5xl bold text-[#231f20]'>WITH A TASTE<br />OF DEJA-VU.</p>
             </div>
-            <div className=' text-left max-sm:w-full w-[43%] max-sm:mt-10 mt-[-4rem] max-sm:ml-0 ml-[40%]'>
-                <p className='text-[#231f20] texty max-sm:text-[2rem] text-left'>
+            <div className=' text-left max-sm:w-full w-[43%] max-sm:mt-10 mt-[-6rem] max-sm:ml-0 ml-[40%]'>
+                <p className='text-[#231f20] texty leading-3 max-sm:text-[1.8rem] text-left'>
                     <span className='tinny pt-[-2rem] max-sm:text-[18px] pr-6 max-sm:pr-28'>About</span>
                     Our creations are singular, never seen elsewhere
                     and do not follow fashion. Nevertheless, they are

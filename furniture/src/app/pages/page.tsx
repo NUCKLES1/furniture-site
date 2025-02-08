@@ -1,4 +1,4 @@
-"use client"
+
 import React,{useEffect} from 'react'
 import Nav from '../components/Nav'
 import Section from '../components/Section'
@@ -9,6 +9,8 @@ import Section5 from '../components/Section5'
 import Section6 from '../components/Section6'
 
 const Homepage = () => {
+
+  {/* 
   useEffect( () => {
     (
       async () => {
@@ -17,6 +19,7 @@ const Homepage = () => {
       }
     )()
   },[])
+  */}
   return (
     <div className='w-full h-full bg-[#ebebeb] overflow-hidden'>
     <Nav />

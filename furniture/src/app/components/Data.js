@@ -3,9 +3,8 @@ import img1 from "../components/images/1.png"
 import img2 from "../components/images/2.png"
 import img3 from "../components/images/3.png"
 import img4 from "../components/images/4.png"
-import witter from '/videos/twitter.mp4'
 
-export const Twit = witter;
+
 
 export const projects = [
         {
@@ -63,6 +62,16 @@ export const projects = [
             date: "JAN 6TH,2023",
         }
     ]
+
+   
+    export const productType =[
+        { title: "Tables", value: "tables "},
+        { title: "Chairs", value: "chairs "},
+        { title: "Frag", value: "frag "},
+        { title: "Assesories", value: "assesories "},
+    ]
+
+
 export const slides = [
         {
             id: 1,

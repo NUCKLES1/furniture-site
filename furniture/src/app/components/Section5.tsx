@@ -16,7 +16,7 @@ const Section5 = () => {
             <p>{val.title}</p>
             <div className='flex'><GoArrowRight className='w-6 h-6 mt-[-6px] max-sm:mt-0 mr-2'/><p>PROJECTS</p></div>
             <div className='left-[-15rem] display h-[20rem] absolute'>
-            <Image src={val.src} width={500} height={700} alt='' className='object-cover mt-36'/>
+            <Image src={val.src} width={500} height={700} alt='' className='object-cover mt-20'/>
             </div>
             <p>{val.date}</p>
           </div>

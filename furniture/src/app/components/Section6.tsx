@@ -4,6 +4,7 @@ import img1 from "../components/images/1.png"
 import img2 from "../components/images/2.png"
 import img3 from "../components/images/3.png"
 import img4 from "../components/images/4.png"
+import Table from './Table'
 
 const Section6 = () => {
   return (
@@ -34,6 +35,7 @@ const Section6 = () => {
 
       <div className='h-[auto] max-sm:mt-52 w-full max-sm:w-[98%] max-sm:ml-1 text-left border-top'>
         <p className='text-7xl ml-2 max-sm:ml-0 max-sm:text-6xl bold text-[#231f20] pt-16'>OUR PRODUCTS</p>
+    
         <div className='w-full ml-[1%] max-sm:ml-0 mt-24 flex max-sm:block max-sm:h-auto h-[60vh] max-md:h-[45vh]'>
           <div className='w-[24%] max-sm:w-full max-sm:ml-0 max-sm:h-[25rem] h-full ima overflow-hidden bg-[#e3e3e3]'>
             <div className='text-left pt-4 pl-2 text-[#231f20] cont'>

@@ -160,6 +160,13 @@
   border-top: 1px solid #231f20;
 }
 
+.sliderly {
+  margin-top: -5rem;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
 .slider {
   height: 650px;
   margin-top: -5rem;
@@ -175,19 +182,34 @@
   animation: scroll 40s linear infinite;
 }
 
-slide-track:hover {
+.slidely-track {
+  display: flex;
+  width: 1800px;
+  animation: scrolly 20s linear infinite;
+}
+
+.slidely-track:hover {
   animation-play-state: paused;
+}
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
+.slidely {
+  position: relative;
+  width: 800px;
 }
 
 .slide {
   height: 250px;
-  width: 350px;
+  width: 360px;
   display: flex;
   align-items: center;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   perspective: 100px;
   cursor: grab;
-  z-index: 1;
 }
 
 .cont {
@@ -220,6 +242,19 @@ slide-track:hover {
   transition: 0.3s ease-in-out;
 }
 
+.tide {
+  display: block;
+}
+
+.ln {
+opacity: 0;
+}
+
+.tide mi:hover .ln{
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
 .slide:hover .ln{
   opacity: 1;
   transition: 0.3s ease-in-out;
@@ -234,7 +269,11 @@ slide-track:hover {
  transform: translateZ(30px);
  position: relative;
  transition: transform 0.5s;
- z-index: 2;
+ z-index: 8;
+}
+
+.inder {
+ z-index: 999;
 }
 
 .burger {
@@ -291,6 +330,15 @@ slide-track:hover {
   }
   100% {
     transform: translateX(calc(-250px *9));
+  }
+}
+
+@keyframes scrolly {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-570px *1));
   }
 }
 
