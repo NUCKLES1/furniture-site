@@ -1,4 +1,5 @@
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { internalGroqTypeReferenceTo, SanityImageCrop, SanityImageHotspot } from "./sanity.types";
 
 export interface BannerData {
   _id: string;
@@ -45,23 +46,40 @@ type Category = {
   name: string;
 };
 
-export interface ProductData {
-  image1: SanityImageSource;
-  title: string;
-  image: ImageAsset;
-  images: ImageAssets;
+export interface ProductData { 
+  stock: number;
+  _id: string;
+  _type: "product";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
+  subtext?: string;
+  images?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+  category?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "category";
+  }>;
   quantity: number;
   price: number;
-  category: Category[];
-  slug: Slug;
-  _createdAt: string;
-  description: string;
-  subtext: string;
-  _updatedAt: string;
   ratings: number;
   brand: string;
-  _type: "product";
-  _id: string;
   position: string;
   rowprice: number;
 }

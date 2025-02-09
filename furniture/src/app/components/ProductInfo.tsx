@@ -12,12 +12,13 @@ import { urlFor } from "@/sanity/lib/image";
 import Imager1 from "./Imager1";
 import Imager2 from "./Imager2";
 import Lister from "./Lister";
+import { Product } from "../../../sanity.types";
 
 interface Props {
   product: ProductData;
 }
 
-const ProductInfo = ({ product }: Props) => {
+const ProductInfo =  ({ product }: { product: Product }) => {
   return (
     <div className="w-full">
       <div className="flex pb-12 px-2 h-auto w-[75%] ml-[27%] flex-col">
@@ -40,7 +41,7 @@ const ProductInfo = ({ product }: Props) => {
               />
               <button className="border mt-2 w-full py-5 tiny ">Sizes</button>
               <Provider store={store}>
-                <AddToCartButton item={product} />
+                <AddToCartButton product={product} />
               </Provider>
             </div>
           </div>

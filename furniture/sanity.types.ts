@@ -107,9 +107,12 @@ export type Tables = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
-  price?: number;
-  brand?: string;
-  quantity?: number;
+  quantity: number;
+  price: number;
+  ratings: number;
+  brand: string;
+  position: string;
+  rowprice: number;
 };
 
 export type Category = {
@@ -134,7 +137,7 @@ export type Category = {
 };
 
 export type Product = {
-  [x: string]: any;
+  stock: number;
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -163,13 +166,17 @@ export type Product = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
-  price?: number;
-  brand?: string;
-  quantity?: number;
-  variant?: "chairs" | "tables" ;
+  quantity: number;
+  price: number;
+  ratings: number;
+  brand: string;
+  position: string;
+  rowprice: number;
+  variant?: "tables" | "chairs";
 };
 
 export type Items = {
+  stock: number;
   _id: string;
   _type: "Items";
   _createdAt: string;
@@ -321,6 +328,7 @@ export type BannerQueryResult = Array<{
 // Variable: productsQuery
 // Query: *[_type == 'product']{    ... }|order(_createdAt asc)
 export type ProductsQueryResult = Array<{
+  stock: number;
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -349,9 +357,12 @@ export type ProductsQueryResult = Array<{
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
-  price?: number;
-  brand?: string;
-  quantity?: number;
+  quantity: number;
+  price: number;
+  ratings: number;
+  brand: string;
+  position: string;
+  rowprice: number;
   variant?: "chairs" | "tables";
 }>;
 // Variable: tablesQuery
@@ -368,6 +379,7 @@ export type BestSellersQueryResult = Array<never>;
 // Variable: PRODUCT_BY_SLUG_QUERY
 // Query: *[_type == 'product' && slug.current == $slug] | order(name asc) [0]
 export type PRODUCT_BY_SLUG_QUERYResult = {
+  stock: number;
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -396,9 +408,12 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
-  price?: number;
-  brand?: string;
-  quantity?: number;
+  quantity: number;
+  price: number;
+  ratings: number;
+  brand: string;
+  position: string;
+  rowprice: number;
   variant?: "chairs" | "tables";
 } | null;
 
