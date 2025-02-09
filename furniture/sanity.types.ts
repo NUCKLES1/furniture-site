@@ -166,7 +166,7 @@ export type Product = {
   price?: number;
   brand?: string;
   quantity?: number;
-  variant?: "tables" | "chairs";
+  variant?: "chairs" | "tables" ;
 };
 
 export type Items = {

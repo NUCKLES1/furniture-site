@@ -16,6 +16,7 @@ import Lister from "./Lister";
 interface Props {
   product: ProductData;
 }
+
 const ProductInfo = ({ product }: Props) => {
   return (
     <div className="w-full">
@@ -48,7 +49,7 @@ const ProductInfo = ({ product }: Props) => {
           <p className="w-[80%] mt-10 pl-5">{product?.subtext}</p>
         </div>
         <p className="tiny uppercase ml-[-4.5rem]">DIMENSION</p>
-        <Imager1 product={product}/>
+        <Imager1 product={product} />
         <div className="w-[70%] mt-[12rem] ml-7 h-[20rem]">
           <div className="ml-[-9rem] text-right w-24">
           <p className="tiny uppercase mb-[-2rem]">Technical <br />

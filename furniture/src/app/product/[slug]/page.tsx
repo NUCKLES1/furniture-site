@@ -76,7 +76,7 @@ const SingleProductPage = async ({
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4 h-full p-4">
 
           <div className="w-full md:col-span-2 xl:col-span-3  flex flex-col justify-center">
-            <ProductInfo product={product} />
+            <ProductInfo product={product}/>
           </div>
         </div>
         <div className="flex w-full h-[21.5rem] md:grid-cols-2 lg:grid-cols-4 gap-2">

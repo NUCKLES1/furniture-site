@@ -37,7 +37,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/components/Data.js"
-  ],
+, "src/app/components/ProductInfo.tsx"  ],
   "exclude": [
     "node_modules"
   ]

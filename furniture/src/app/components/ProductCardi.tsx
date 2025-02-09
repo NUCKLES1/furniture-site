@@ -34,7 +34,7 @@ const ProductCardi = ({ product }: { product: Product }) => {
         <p className="font-bold line-clamp-1">{product?.title}</p>
         <p>{product.description}</p>
         <PriceView price={product?.price} />
-        <AddToCartButton product={{product}} />
+        <AddToCartButton product={product} />
       </div>
     </div>
   );
