@@ -107,12 +107,9 @@ export type Tables = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
-  quantity: number;
-  price: number;
-  ratings: number;
-  brand: string;
-  position: string;
-  rowprice: number;
+  price?: number;
+  brand?: string;
+  quantity?: number;
 };
 
 export type Category = {
@@ -137,7 +134,7 @@ export type Category = {
 };
 
 export type Product = {
-  stock: number;
+  discount: number;
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -166,17 +163,13 @@ export type Product = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
-  quantity: number;
-  price: number;
-  ratings: number;
-  brand: string;
-  position: string;
-  rowprice: number;
+  price?: number;
+  brand?: string;
+  stock?: number;
   variant?: "tables" | "chairs";
 };
 
 export type Items = {
-  stock: number;
   _id: string;
   _type: "Items";
   _createdAt: string;
@@ -328,7 +321,6 @@ export type BannerQueryResult = Array<{
 // Variable: productsQuery
 // Query: *[_type == 'product']{    ... }|order(_createdAt asc)
 export type ProductsQueryResult = Array<{
-  stock: number;
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -357,12 +349,9 @@ export type ProductsQueryResult = Array<{
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
-  quantity: number;
-  price: number;
-  ratings: number;
-  brand: string;
-  position: string;
-  rowprice: number;
+  price?: number;
+  brand?: string;
+  stock?: number;
   variant?: "chairs" | "tables";
 }>;
 // Variable: tablesQuery
@@ -379,7 +368,6 @@ export type BestSellersQueryResult = Array<never>;
 // Variable: PRODUCT_BY_SLUG_QUERY
 // Query: *[_type == 'product' && slug.current == $slug] | order(name asc) [0]
 export type PRODUCT_BY_SLUG_QUERYResult = {
-  stock: number;
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -408,14 +396,34 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
-  quantity: number;
-  price: number;
-  ratings: number;
-  brand: string;
-  position: string;
-  rowprice: number;
+  price?: number;
+  brand?: string;
+  stock?: number;
   variant?: "chairs" | "tables";
 } | null;
+// Variable: CATEGORIES_QUERY
+// Query: *[_type=="category"] | order(name asc)
+export type CATEGORIES_QUERYResult = Array<{
+  slug: any;
+  _id: string;
+  _type: "category";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  description?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -427,5 +435,6 @@ declare module "@sanity/client" {
     "*[_type == 'items']{\n    ...\n }|order(_createdAt asc)": ItemsQueryResult;
     "*[_type == 'product' && position == 'Bestsellers']{\n   ...\n  } | order(_createdAt asc)": BestSellersQueryResult;
     "*[_type == 'product' && slug.current == $slug] | order(name asc) [0]": PRODUCT_BY_SLUG_QUERYResult;
+    "*[_type==\"category\"] | order(name asc)": CATEGORIES_QUERYResult;
   }
 }

@@ -62,8 +62,8 @@ export default defineType({
       type: "string",
     }),
     defineField({
-      name: "quantity",
-      title: "Quantity",
+      name: "stock",
+      title: "Stock",
       type: "number",
     }),
 

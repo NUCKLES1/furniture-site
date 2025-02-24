@@ -5,6 +5,8 @@ import SmallLoader from "../SmallLoader";
 import { Product } from "../../../../sanity.types";
 import Quantity from "../Quantity";
 import PriceView from "../PriceView";
+import useCartStore from "../../../../store";
+import toast from "react-hot-toast";
 
 interface Props {
   product:Product;
@@ -13,8 +15,10 @@ interface Props {
 
 const AddToCartButton = ({ product, className }: Props) => {
 
-  const isOutOfStock = product?.quantity === 0;
-  const itemCount = 0
+  const { addItem, getItemCount } = useCartStore();
+  const itemCount = getItemCount(product?._id);
+
+  const isOutOfStock = product?.stock === 0;
 
   return (
     <div className="w-full">
@@ -31,8 +35,12 @@ const AddToCartButton = ({ product, className }: Props) => {
       </div>
     ) : (
       <button
+      onClick={() => {
+        addItem(product);
+        toast.success(`${product?.title?.substring(0,12)}... added successfully`)
+      }}
       disabled={isOutOfStock}
-      className="border w-full py-5 tiny text-white hover:text-[#231f20] hover:bg-[#ebebeb] ease-in-out	duration-200 bg-[#231f20]">
+      className="border cursor-pointer w-full py-5 tiny text-white hover:text-[#231f20] hover:bg-[#ebebeb] ease-in-out	duration-200 bg-[#231f20]">
       ADD TO BASKET
     </button>
     )}

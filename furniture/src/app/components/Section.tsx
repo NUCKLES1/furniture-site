@@ -1,7 +1,6 @@
 "use client"
 import NextVideo from 'next-video'
 import React from 'react'
-import twitter from 'https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm'
 import Video from 'next-video'
 import BackgroundVideo from 'next-video/background-video'
 import Nav from './Nav'
@@ -10,9 +9,9 @@ import Nav from './Nav'
 const Section = () => {
     return (
         <div className='w-full h-[100vh]'>
-            {/*<div className='h-full w-full max-sm:h-[100vh]'>
+           <div className='h-full w-full max-sm:h-[100vh]'>
                 <BackgroundVideo src='https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-9-HOME-1.webm' className='max-sm:h-[100vh]' autoPlay muted loop playsInline/>
-            </div>*/}
+            </div>
             <div className=' w-full absolute justify-center text-center max-sm:top-0 top-0 mt-4'>
                 <p className='bigi text-[145px] max-md:text-[75px] max-md:mt-[-0.9rem] mt-[-4rem] max-sm:text-[44.7px]'>NUCKLES DAAN</p>
                 <ul className='w-full items-center mt-[-2rem] max-md:mt-[-1rem] justify-center text-center tiny flex'>

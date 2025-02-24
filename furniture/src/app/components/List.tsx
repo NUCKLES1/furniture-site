@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { getProductsData } from "@/lib/getData";
 import { ProductData } from "../../../types";

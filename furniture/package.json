@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-"type": "module",
+    "type": "module",
     "typegen": "npx sanity@latest schema extract && npx sanity@latest typegen generate"
   },
   "dependencies": {
@@ -30,7 +30,8 @@
     "styled-components": "^6.1.14",
     "swr": "^2.2.5",
     "tailwind-merge": "^2.6.0",
-    "tsx": "^4.19.2"
+    "tsx": "^4.19.2",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",

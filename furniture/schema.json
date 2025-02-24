@@ -891,7 +891,7 @@
         },
         "optional": true
       },
-      "quantity": {
+      "stock": {
         "type": "objectAttribute",
         "value": {
           "type": "number"

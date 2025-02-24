@@ -1,17 +1,13 @@
 import React from "react";
-import Image from "next/image";
-import pic from "../components/images/next.svg";
-import dc1 from "../components/images/dc1.png";
-import dc2 from "../components/images/dc2.png";
-import dc3 from "../components/images/dc3.png";
-import dc4 from "../components/images/dc4.png";
-import ProductCard from "./ProductCard";
 import List from "./List";
 import ProductGrid from "./ProductGrid";
+import { getAllCategories } from "@/sanity/helper/query";
+import Categorys from "../components/Categorys";
 
 
-const Section2  = () => {
+const Section2  = async () => {
    
+   const categories = await getAllCategories();
 
   return (
     <div className="w-full h-[100vh] pt-40 max-sm:h-auto bg-[#ebebeb]">
@@ -26,7 +22,7 @@ const Section2  = () => {
       </div>
       {/*<ProductGrid /*/}
       <List />
-     
+      <Categorys categories={categories}/>
        
      
     </div>
