@@ -7,11 +7,8 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { PiShoppingCartThin } from "react-icons/pi";
 import SearchBar from "./SearchBar";
 
-const Nav = async () => {
- 
-
-
-  const [showi, setShowi] = useState(false);
+const Nav = () => {
+  const [showi, setShowi] = useState(true);
   const controlNavbar = () => {
     if (window.scrollY > 10) {
       setShowi(false);

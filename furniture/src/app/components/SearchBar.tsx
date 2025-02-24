@@ -1,3 +1,4 @@
+"use client"
 
 import { client } from "@/sanity/lib/client";
 import React, { useCallback, useEffect, useState } from "react";
@@ -50,14 +51,15 @@ const SearchBar = () => {
   };
 
   const [isActive, setIsActive] = useState(false);
-  const toggleButton = () => {
+  const toggleButton = (p0: (prev: any) => boolean) => {
     setIsActive(!isActive);
   };
 
   return (
     <>
       <button
-        onClick={() => setIsActive((prev) => !prev)}
+
+        onClick={() => toggleButton((prev) => !prev)}
         className="w-[15%] h-full bord text-center pb-6 hove"
       >
         {!isActive ? (

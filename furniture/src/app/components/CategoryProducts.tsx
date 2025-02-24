@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React, { useEffect, useState } from "react";
 import { CATEGORIES_QUERYResult, Product } from "../../../sanity.types";
@@ -20,12 +20,12 @@ const CategoryProducts = ({ categories, slug }: Props) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchProducts = async (categorySlug: string) => {
+  const fetchProducts =  async (categorySlug: string) => {
     try {
       setLoading(true);
       const query =`*[_type == 'product' && references(*[_type == 'category' && slug.current == $categorySlug]._id)] | order(name asc)`; 
-      const data = await client.fetch(query, { categorySlug });
-      setProducts(data);
+      const data = client.fetch(query, { categorySlug });
+      setProducts(await data);
     } catch (error) {
       console.error("Error fetching Products");
     } finally {
@@ -90,3 +90,4 @@ const CategoryProducts = ({ categories, slug }: Props) => {
 };
 
 export default CategoryProducts;
+

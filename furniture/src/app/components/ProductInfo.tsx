@@ -36,9 +36,8 @@ const ProductInfo =  ({ product }: { product: Product }) => {
             
             <div className="w-[20rem] text-right">
               <FormattedPrice
-                amount={product?.price}
-                className="text-2xl font-bold text-[#231f20] w-full"
-              />
+                
+                className="text-2xl font-bold text-[#231f20] w-full" amount={0}/>
               <button className="border mt-2 w-full py-5 tiny ">Sizes</button>
               <Provider store={store}>
                 <AddToCartButton product={product} />
