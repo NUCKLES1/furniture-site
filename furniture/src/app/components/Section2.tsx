@@ -22,7 +22,7 @@ const Section2  = async () => {
       </div>
       {/*<ProductGrid /*/}
       <List />
-      <Categorys categories={categories}/>
+      <Categorys categories={[]} />
        
      
     </div>
