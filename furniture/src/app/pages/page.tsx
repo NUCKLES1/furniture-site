@@ -13,7 +13,6 @@ import Scroll from "../components/Scroll";
 const Homepage = () => {
   return (
     <div className="w-full h-full bg-[#ebebeb] overflow-hidden">
-  
       <Nav />
       <Section />
       <Section2 />
