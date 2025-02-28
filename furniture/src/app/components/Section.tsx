@@ -9,6 +9,7 @@ import vid from "https://www.lyon-beton.com/wp-content/uploads/2024/04/VIDEO-16-
 
 const Section = () => {
     return (
+        
         <div className='w-full h-[100vh]'>
            <div className='h-full w-full max-sm:h-[100vh]'>
             <BackgroundVideo src={vid} className='max-sm:h-[100vh]' autoPlay muted loop playsInline/>
