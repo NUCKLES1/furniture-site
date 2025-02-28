@@ -17,7 +17,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider dynamic>
     <html lang="en">
       <body className={inter.className}>{children}
         <Toaster position="bottom-right"
@@ -29,6 +28,5 @@ export default function RootLayout({
         }}/>
       </body>
     </html>
-    </ClerkProvider>
   );
 }

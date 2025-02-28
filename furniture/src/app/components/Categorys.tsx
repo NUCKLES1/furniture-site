@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
-import { CATEGORIES_QUERYResult, Category } from "../../../sanity.types";
+import { CATEGORIES_QUERYResult,Category } from "../../../sanity.types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Categorys = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
-  const pathname = usePathname;
+  const pathname = usePathname();
+  
 
   return (
     <div className="pt-[8rem] pb-[3rem] lg:ml-[20%]">
@@ -53,3 +54,7 @@ const Categorys = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
 };
 
 export default Categorys;
+function validateToken(categories: CATEGORIES_QUERYResult) {
+  throw new Error("Function not implemented.");
+}
+

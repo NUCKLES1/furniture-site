@@ -12,8 +12,8 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div>
       <div className="text-left pt-4 pl-2 text-[#231f20] cont">
-        <p className="liney">{product?.title}</p>
-        <p className="text-[12px] mt-1">{product?.description}</p>
+        <p className="liney max-sm:text-[25px]">{product?.title}</p>
+        <p className="text-[12px] max-sm:text-[15px] mt-2">{product?.description}</p>
       </div>
 
       <div>
@@ -37,11 +37,11 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
         )}
       </div>
-      <div className="flex mt-4 text-[#231f20] conti ml-2">
-        <div className="text-[12px] font-bold mt-8">
+      <div className="flex max-sm:mt-8 mt-4 text-[#231f20] conti ml-2">
+        <div className="text-[12px] font-bold max-sm:text-[15px] mt-8">
           <PriceView price={product?.price} />
         </div>
-        <p className="ml-2 text-[12px] mt-8">{product?.brand}</p>
+        <p className="ml-2 max-sm:text-[15px] text-[12px] mt-8">{product?.brand}</p>
       </div>
     </div>
   );

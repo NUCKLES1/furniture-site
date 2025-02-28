@@ -34,7 +34,7 @@ const ImageView = ({ images = [] }: Props) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full max-h-[40vh] min-h-[40vh] rounded-md overflow-hidden"
+          className="w-full mb-4 max-h-[45vh] min-h-[45vh] overflow-hidden"
         >
           <Image
             src={urlFor(active).url()}

@@ -11,6 +11,7 @@ const CartPage = () => {
     deleteCartProduct,
     getTotalPrice,
     getItemCount,
+
     resetCart,
     getGroupedItems,
   } = useCartStore();

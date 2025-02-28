@@ -1,5 +1,6 @@
 
 import React,{useEffect} from 'react'
+import LocomotiveScroll from 'locomotive-scroll'
 import Nav from '../components/Nav'
 import Section from '../components/Section'
 import Section2 from '../components/Section2'
@@ -10,7 +11,7 @@ import Section6 from '../components/Section6'
 
 const Homepage = () => {
 
-  {/* 
+  
   useEffect( () => {
     (
       async () => {
@@ -19,7 +20,7 @@ const Homepage = () => {
       }
     )()
   },[])
-  */}
+
   return (
     <div className='w-full h-full bg-[#ebebeb] overflow-hidden'>
     <Nav />

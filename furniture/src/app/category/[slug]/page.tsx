@@ -22,7 +22,7 @@ const CategoryPage = async ({params,}:{params: Promise<{slug: string}>}) => {
        </span>
       </div>
        */}
-      <CategoryProducts categories={[]} slug={slug} />
+      <CategoryProducts categories={categories} slug={slug} />
     </div>
     </>
   )

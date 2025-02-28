@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='w-full h-[70vh] overflow-hidden max-sm:h-[75vh] bg-[#ebebeb]'>
+        <div className='w-full h-[70vh] overflow-hidden max-sm:pb-[6rem] max-sm:h-[75vh] bg-[#ebebeb]'>
             <div className='w-[74%] max-sm:w-[95%] max-sm:ml-2 h-full ml-[25%] flex max-sm:block justify-between border-left'>
                 <ul className='ml-2 text-[0.9em] text-[#231f20]'>
                     <li className='cursor-pointer'>SHOP</li>

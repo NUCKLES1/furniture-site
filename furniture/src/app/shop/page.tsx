@@ -9,12 +9,14 @@ import { getAllCategories } from '@/sanity/helper/query'
 
 const page = async () => {
 
-    const categories = await getAllCategories();
+    const categories =  await getAllCategories();
+
+    
     
   return (
     <div className=' bg-[#ebebeb] mx-2 h-auto overflow-hidden'>
         <Navbar />
-        <Categorys categories={[]}  />
+        <Categorys categories={categories}  />
         <AllProduct />
         <Footer />
     </div>

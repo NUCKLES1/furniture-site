@@ -9,6 +9,7 @@ import SearchBar from "./SearchBar";
 import CartIcon from "./CartIcon";
 import Categorys from "./Categorys";
 import { ClerkLoaded } from "@clerk/nextjs";
+import useCartStore from "../../../store";
 
 const Nav = () => {
   const [showi, setShowi] = useState(true);
@@ -19,6 +20,8 @@ const Nav = () => {
       setShowi(true);
     }
   };
+
+
 
   const [showMe, setShowMe] = useState(false);
   function toggle() {

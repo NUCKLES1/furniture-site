@@ -131,6 +131,7 @@ export type Category = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  slug?: Slug;
 };
 
 export type Product = {
@@ -163,6 +164,7 @@ export type Product = {
     [internalGroqTypeReferenceTo]?: "category";
   }>;
   price?: number;
+  discount?: number;
   brand?: string;
   stock?: number;
   variant?: "tables" | "chairs";
@@ -349,6 +351,7 @@ export type ProductsQueryResult = Array<{
     [internalGroqTypeReferenceTo]?: "category";
   }>;
   price?: number;
+  discount?: number;
   brand?: string;
   stock?: number;
   variant?: "chairs" | "tables";
@@ -396,6 +399,7 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
     [internalGroqTypeReferenceTo]?: "category";
   }>;
   price?: number;
+  discount?: number;
   brand?: string;
   stock?: number;
   variant?: "chairs" | "tables";
@@ -403,7 +407,6 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
 // Variable: CATEGORIES_QUERY
 // Query: *[_type=="category"] | order(name asc)
 export type CATEGORIES_QUERYResult = Array<{
-  slug: any;
   _id: string;
   _type: "category";
   _createdAt: string;
@@ -422,7 +425,8 @@ export type CATEGORIES_QUERYResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   };
-}>;
+  slug?: Slug;
+} | null>;
 
 // Query TypeMap
 import "@sanity/client";

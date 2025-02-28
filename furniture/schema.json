@@ -690,6 +690,14 @@
           }
         },
         "optional": true
+      },
+      "slug": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "slug"
+        },
+        "optional": true
       }
     }
   },
@@ -878,6 +886,13 @@
         "optional": true
       },
       "price": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
+      "discount": {
         "type": "objectAttribute",
         "value": {
           "type": "number"

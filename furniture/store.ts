@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { Product } from "./sanity.types";
+import items from "@/sanity/schemas/items";
 
 interface BasketItem {
   product: Product;
@@ -51,11 +52,7 @@ const useCartStore = create<CartState>()(
                 return acc;
             }, [] as BasketItem[]),
         })),
-        deleteCartProduct:(productId)=>set((state)=>({
-            items:state.items.filter(
-                ({ product }) => product?._id !== productId
-            ),
-        })),
+        deleteCartProduct:() => set({items: []}),
         resetCart: () => set({ items: [] }),
         getTotalPrice:()=>{
             return get().items.reduce((total, item)=>total + (item.product.price ?? 0 )*item.quantity, 0);
