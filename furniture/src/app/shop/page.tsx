@@ -14,7 +14,7 @@ const page = async () => {
   return (
     <div className=' bg-[#ebebeb] mx-2 h-auto overflow-hidden'>
         <Navbar />
-        <Categorys categories={categories} />
+        <Categorys categories={[]}  />
         <AllProduct />
         <Footer />
     </div>
