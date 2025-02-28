@@ -106,9 +106,9 @@ const SingleProductPage = async ({
                       </h2>
                     </div>
 
-                    <div className="lg:w-[20rem] max-sm:mt-20 max-sm:w-full lg:text-right">
-                      <div className="text-2xl font-bold text-[#231f20] w-full">
-                        <span className="text-base text-right">
+                    <div className="lg:w-[20rem] max-sm:mt-20 max-sm:w-full max-sm:text-left lg:text-right">
+                      <div className="lg:text-2xl max-sm:text-[25px] font-bold text-[#231f20] w-full">
+                        <span className="lg:text-base lg:text-right max-sm:text-[25px]">
                           {priceFormat}
                         </span>
                       </div>
