@@ -2,21 +2,20 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { Product } from "./sanity.types";
 
-interface CartItem {
+interface BasketItem {
   product: Product;
   quantity: number;
 }
 
 interface CartState {
-  items: CartItem[];
+  items: BasketItem[];
   addItem: (product: Product) => void;
   removeItem: (productId: string) => void;
   deleteCartProduct:(productId:string)=> void;
   resetCart: () => void;
   getTotalPrice: () => number;
-  getSubtotalPrice: () => number;
   getItemCount: (productId: string) => number;
-  getGroupedItems: () => CartItem[];
+  getGroupedItems: () => BasketItem[];
 }
 
 const useCartStore = create<CartState>()(
@@ -26,18 +25,18 @@ const useCartStore = create<CartState>()(
       addItem: (product) =>
         set((state) => {
           const existingItem = state.items.find(
-            (item) => item.product._id === product._id
+            item => item.product._id === product._id
           );
           if (existingItem) {
             return {
-              items: state.items.map((item) =>
+              items: state.items.map(item =>
                 item.product._id === product._id
                   ? { ...item, quantity: item.quantity + 1 }
                   : item
               ),
             };
           } else {
-            return { item: [...state.items, { product, quantity: 1 }] };
+            return { items: [...state.items, { product, quantity: 1 }] };
           }
         }),
         removeItem: (productId)=>set((state)=>({
@@ -50,7 +49,7 @@ const useCartStore = create<CartState>()(
                     acc.push(item)
                 }
                 return acc;
-            }, [] as CartItem[]),
+            }, [] as BasketItem[]),
         })),
         deleteCartProduct:(productId)=>set((state)=>({
             items:state.items.filter(
@@ -61,16 +60,9 @@ const useCartStore = create<CartState>()(
         getTotalPrice:()=>{
             return get().items.reduce((total, item)=>total + (item.product.price ?? 0 )*item.quantity, 0);
         },
-        getSubtotalPrice:()=>{
-            return get().items.reduce((total, item) => {
-                const price = item.product.price ?? 0;
-                const discount = ((item.product.discount ?? 0) * price) / 100;
-                const discountedPrice = price + discount;
-                return total + discountedPrice * item.quantity;
-            }, 0);
-        },
-        getItemCount:(product) => {
-         const item = get().items.find((item) => item.product._id === product);
+
+        getItemCount:(productId) => {
+         const item = get().items.find(item => item.product._id === productId);
          return item ? item.quantity : 0;   
         },
         getGroupedItems:() => get().items,

@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='w-full h-[70vh] overflow-hidden max-sm:h-[85vh] bg-[#ebebeb]'>
-            <div className='w-[74%] max-sm:w-[95%] max-sm:ml-4 h-full ml-[25%] flex max-sm:block justify-between border-left'>
-                <ul className='ml-2 text-[0.7em] text-[#231f20]'>
+        <div className='w-full h-[70vh] overflow-hidden max-sm:h-[75vh] bg-[#ebebeb]'>
+            <div className='w-[74%] max-sm:w-[95%] max-sm:ml-2 h-full ml-[25%] flex max-sm:block justify-between border-left'>
+                <ul className='ml-2 text-[0.9em] text-[#231f20]'>
                     <li className='cursor-pointer'>SHOP</li>
                     <li className='cursor-pointer'>ABOUT</li>
                     <li className='cursor-pointer'>JOURNAL</li>
@@ -24,8 +24,8 @@ const Footer = () => {
                 </ul>
             </div>
             <div className='flex max-sm:ml-3 lowercase relative max-sm:block max-sm:mt-32 w-full justify-between top-[-65%]'>
-            <p className='text-[#231f20] bold max-md:text-[75px] text-[12rem] max-sm:text-[115px]'>NUCKLES</p>
-            <p className='text-[#231f20] bold max-sm:mt-[-5rem] max-sm:text-[115px] max-md:text-[75px] text-[12rem]'>DAAN</p>
+            <p className='text-[#231f20] bold max-sm:bolder max-md:text-[75px] text-[12rem] max-sm:text-[100px]'>NUCKLES</p>
+            <p className='text-[#231f20] bold max-sm:bolder max-sm:mt-[-5rem] max-sm:text-[100px] max-md:text-[75px] text-[12rem]'>DAAN</p>
             </div>
             <ul className='flex relative max-md:w-[98%] ml-2 max-sm:ml-4 underline text-[0.5em] text-[#231f20] font-bold top-[-75%] max-sm:mt-14'>
                 <li>T&C</li>

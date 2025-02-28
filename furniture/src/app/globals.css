@@ -73,6 +73,21 @@
   cursor: pointer;
 }
 
+.web {
+  font-weight: bold;
+  -webkit-text-stroke: 1px  #231f20;
+}
+
+.btn:focus {
+  background: black;
+}
+
+.webi {
+  font-weight: bold;
+  color: #231f20;
+  -webkit-text-stroke: 0px  #231f20;
+}
+
 .hov:hover {
   color: #ebebed;
   transition: 0.3s ease-in-out;

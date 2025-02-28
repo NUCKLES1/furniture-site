@@ -8,7 +8,7 @@ import Table from './Table'
 
 const Section6 = () => {
   return (
-    <div className='w-full max-sm:w-[96%] pb-40 max-sm:ml-2 h-[auto] max-sm:mt-[10rem] text-center'>
+    <div className='w-full lg:mt-[10rem] max-sm:w-[96%] pb-40 max-sm:ml-2 h-[auto] max-sm:mt-[10rem] text-center'>
       <Image src={img1} alt='' data-scroll data-scroll-speed="0.4" className='w-[25rem] ml-[15.5%] mb-[-15rem] max-sm:hidden h-[20rem] object-cover' />
       <Image src={img1} alt='' className='w-[25rem] max-sm:mt-[0rem] hidden max-sm:block ml-[15.5%] max-sm:h-[13rem] max-sm:w-[55%] max-sm:ml-8 h-[20rem] object-cover' />
       <div className='w-[30%] max-sm:w-full ml-[35%] max-sm:relative max-sm:ml-0 text-center mt-[-5rem] pt-20 relative h-20'>

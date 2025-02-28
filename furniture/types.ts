@@ -47,7 +47,6 @@ type Category = {
 };
 
 export interface ProductData { 
-  stock: number;
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -76,6 +75,8 @@ export interface ProductData {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
+  discount: number;
+  stock: number;
   quantity: number;
   price: number;
   ratings: number;

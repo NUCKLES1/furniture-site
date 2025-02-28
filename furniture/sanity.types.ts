@@ -134,7 +134,6 @@ export type Category = {
 };
 
 export type Product = {
-  discount: number;
   _id: string;
   _type: "product";
   _createdAt: string;

@@ -9,7 +9,7 @@ const NoProducts = ({
   className?: string;
 }) => {
   return (
-    <div className={"flex flex-col items-center justify-center py-10 min-h-80 space-y-4 text-center bg-gray-100 rounded-lg w-[80%] mt-10"}>
+    <div className={"flex flex-col items-center justify-center py-10 min-h-80 space-y-4 text-center bg-gray-100 rounded-lg ml-[10%] w-[80%] mt-10"}>
       <motion.div
       initial={{opacity:0,y:-20}}
       animate={{opacity:1,y:0}}

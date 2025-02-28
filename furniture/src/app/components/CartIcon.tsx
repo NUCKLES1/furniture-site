@@ -7,11 +7,11 @@ import useCartStore from '../../../store'
 const CartIcon = () => {
     const {items} = useCartStore()
   return (
-    <Link href={"/cart"} className='group relative'>
+    <div className='group relative'>
         <span className='absolute -top-1 -right-1 bg-black text-white h-3'>
             {items.length ? items.length : 0}
         </span>
-    </Link>
+    </div>
   )
 }
 

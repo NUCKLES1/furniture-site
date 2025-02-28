@@ -1,21 +1,24 @@
 "use client";
 
 import { twMerge } from "tailwind-merge";
-import SmallLoader from "../SmallLoader";
-import { Product } from "../../../../sanity.types";
-import Quantity from "../Quantity";
-import PriceView from "../PriceView";
-import useCartStore from "../../../../store";
+import SmallLoader from "./SmallLoader";
+import { Product } from "../../../sanity.types";
+import Quantity from "./Quantity";
+import PriceView from "./PriceView";
+import useCartStore from "../../../store";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 interface Props {
   product:Product;
   className?: string;
 }
 
-const AddToCartButton = ({ product, className }: Props) => {
+function AddToCartButton ({ product, className }: Props) {
 
-  const { addItem, getItemCount } = useCartStore();
+
+
+  const { addItem, removeItem, getItemCount } = useCartStore();
   const itemCount = getItemCount(product?._id);
 
   const isOutOfStock = product?.stock === 0;

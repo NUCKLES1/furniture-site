@@ -33,34 +33,22 @@ const Navbar = () => {
       <div className="w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
         <ul className="w-[30%] h-full tiny flex max-sm:hidden relative">
           <div className="show block w-[33%]">
-            <li className="w-full h-full pt-5 hove relative z-[999] bord text-center">
-              SHOP{" "}
-            </li>
-            <div className="hider overflow">
-              <ul className="border bg-[#231f20]">
-                <li className="w-full h-[52px] pt-5 text-[#ebebed] hovee text-center">
-                  TABLE
-                </li>
-                <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center">
-                  SEAT
-                </li>
-                <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center">
-                  STORAGE
-                </li>
-                <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center">
-                  ACCESSORIES
-                </li>
-                <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center">
-                  FRAGS
-                </li>
-              </ul>
-            </div>
+            <Link href={"/shop"}>
+              <button
+                className="w-full hove bg-transparent btn bord
+                 h-full"
+              >
+                SHOP
+              </button>
+            </Link>
           </div>
           <li className="w-[33%] h-full pt-5 hove bord text-center">ABOUT</li>
           <li className="w-[33%] h-full pt-5 hove bord text-center">JOURNAL</li>
         </ul>
         <div className="w-[40%] text-center max-sm:hidden bord">
-        <p className="p-3"><Link href="/">nuckles daan</Link></p>
+          <p className="p-3">
+            <Link href="/">nuckles daan</Link>
+          </p>
         </div>
         <div className="w-[30%] max-sm:hidden flex">
           <p className="w-[55%] h-full pt-5 tiny hove bord text-center">

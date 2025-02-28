@@ -4,21 +4,21 @@ import React from "react";
 import Image from "next/image";
 import { Product } from "../../../sanity.types";
 import PriceView from "./PriceView";
-import AddToCartButton from "./products/AddToCartButton";
+import AddToCartButton from "./AddToCartButton";
 
 const ProductCardi = ({ product }: { product: Product }) => {
   return (
-    <div>
+    <div className="bg-[#ebebeb]">
       <div className="bg-gradient-to-r from-zinc-200 via-zinc-2 to-zinc-200">
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`}>
             <Image
               src={urlFor(product?.images[0]).url()}
-              width={500}
-              height={500}
+              width={300}
+              height={300}
               alt="productimage"
               priority
-              className={`w-full h-72 object-contain overflow-hidden ${product?.stock !== 0 && "group-hover:scale-105 cale"}`}
+              className={`w-full lg:h-72 object-contain overflow-hidden ${product?.stock !== 0 && "group-hover:scale-105 cale"}`}
             />
           </Link>
         )}
@@ -32,7 +32,7 @@ const ProductCardi = ({ product }: { product: Product }) => {
       </div>
       <div className="py-3 px-2 flex flex-col gap-1.5 bg-zinc-50 border-t-0 rounded-md rounded-tl-none rounded-tr-none">
         <p className="font-bold line-clamp-1">{product?.title}</p>
-        <p>{product.description}</p>
+        <p className="max-sm:leading-none">{product.description}</p>
         <PriceView price={product?.price} />
         <AddToCartButton product={product} />
       </div>

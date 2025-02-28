@@ -19,6 +19,7 @@ const Section = () => {
                     <li className='ml-8 pt-5 cursor-pointer text-center'>ABOUT</li>
                     <li className='ml-8 pt-5 cursor-pointer text-center'>JOURNAL</li>
                     <li className='ml-8 pt-5 cursor-pointer text-center'>JOURNAL</li>
+                    
                 </ul>
                 <div className='flex w-full mt-40 max-md:mt-20 text-center justify-center'>
                     <ul className='flex-row justify-center items-center flex flex-wrap gap-6 h-full w-[60%] max-sm:w-[60%] max-md:w-[80%]'>

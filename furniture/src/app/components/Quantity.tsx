@@ -30,7 +30,7 @@ const Quantity = ({ product, className }: Props) => {
   return (
     <div className="flex items-center gap-1 text-base">
       <button
-        onClick={handleRemoveProduct}
+        onClick={()=> removeItem(product._id)}
         disabled={itemCount === 0 || isOutOfStock}
         className={"p-2 text-center h bg-black text-white rounded-md"}
       >

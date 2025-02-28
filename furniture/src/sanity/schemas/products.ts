@@ -57,6 +57,11 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "discount",
+      title: "Discount",
+      type: "number",
+    }),
+    defineField({
       name: "brand",
       title: "Brand",
       type: "string",

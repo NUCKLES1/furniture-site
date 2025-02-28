@@ -26,30 +26,27 @@ interface Props {
 const ImageView = ({ images = [] }: Props) => {
   const [active, setActive] = useState(images[0]);
   return (
-    <div className="w-full overflow-y-auto h-full">
-
-
-        {/* 
-            <div className="w-full md:w-1/2 space-y-2 md:space-y-4">
+    <div className="w-full lg:hidden md:w-1/2 space-y-2 md:space-y-4">
       <AnimatePresence mode="wait">
         <motion.div
-        key={active?._key}
-        initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
-        exit={{ opacity: 0}}
-        transition={{ duration: 0.5}}
-        className="w-full max-h-[550px] min-h-[450px] border border-black/10 rounded-md overflow-hidden">
+          key={active?._key}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full max-h-[40vh] min-h-[40vh] rounded-md overflow-hidden"
+        >
           <Image
             src={urlFor(active).url()}
             alt="productImage"
             width={700}
             height={700}
             priority
-            className="w-full h-96 max-h-[550px] min-h-[500px] object-contain group-hover:scale-110 rounded-md"
+            className="w-full h-96 max-h-[550px] min-h-[500px] object-cover group-hover:scale-110 rounded-md"
           />
         </motion.div>
       </AnimatePresence>
-      <div className="grid grid-cols-6 gap-2 h-20 md:h-28">
+      <div className="grid grid-cols-6 ml-4 gap-2 h-16 md:h-28">
         {images?.map((image) => (
           <button
             onClick={() => setActive(image)}
@@ -66,12 +63,10 @@ const ImageView = ({ images = [] }: Props) => {
           </button>
         ))}
       </div>
-      */}
-      <div className="flex flex-row h-full overflow-x-hidden w-full">
+
+      <div className="flex max-sm:hidden flex-row h-full overflow-x-hidden w-full">
         {images?.map((image) => (
-          <div
-            key={image?._key}
-            className="">
+          <div key={image?._key} className="">
             <Image
               src={urlFor(image).url()}
               alt="productimage"
