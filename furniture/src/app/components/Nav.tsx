@@ -68,11 +68,6 @@ const Nav = () => {
           </p>
         </div>
         <div className="w-[30%] max-sm:hidden flex">
-          <ClerkLoaded>
-           {
-            
-           }
-            </ClerkLoaded>
           <p className="w-[55%] h-full pt-5 tiny hove bord text-center">
             <Link href="/contact">CONTACT</Link>
           </p>
