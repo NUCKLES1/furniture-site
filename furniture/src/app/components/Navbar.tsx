@@ -6,6 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import { LiaTimesSolid } from "react-icons/lia";
 import { PiShoppingCartThin } from "react-icons/pi";
 import SearchBar from "./SearchBar";
+import CartIcon from "./CartIcon";
 
 const Navbar = () => {
   const [showi, setShowi] = useState(true);
@@ -59,7 +60,11 @@ const Navbar = () => {
           </div>
           <SearchBar />
           <div className="w-[15%] h-full hove">
-            <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-8 ml-[1rem]" />
+            <Link href={"/cart"} className="h-full w-full flex">
+              
+              <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]"></PiShoppingCartThin>
+              <CartIcon />
+            </Link>
           </div>
         </div>
 

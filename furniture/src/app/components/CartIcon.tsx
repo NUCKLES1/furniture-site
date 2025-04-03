@@ -5,14 +5,16 @@ import Link from 'next/link'
 import useCartStore from '../../../store'
 
 const CartIcon = () => {
-    const {items} = useCartStore()
+    const itemCount = useCartStore((state) => state.items.reduce((total, item) => total + item.quantity, 0))
   return (
-    <div className='group relative'>
-        <span className='absolute -top-1 -right-1 bg-black text-white h-3'>
-            {items.length ? items.length : 0}
+    <div className='h-full w-4 pt-3 ml-2 border-l border-black bg-[#03a77e]'>
+        <span className=' -right-1 text-white text-[12px] h-full'>
+          {itemCount}
         </span>
     </div>
   )
 }
 
 export default CartIcon
+
+

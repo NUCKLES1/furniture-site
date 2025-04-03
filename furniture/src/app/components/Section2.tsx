@@ -5,6 +5,7 @@ import ProductGrid from "./ProductGrid";
 import { getAllCategories } from "@/sanity/helper/query";
 import Categorys from "../components/Categorys";
 import Link from "next/link";
+import Do from "./Do";
 
 
 
@@ -25,7 +26,7 @@ const Section2  = () => {
       </div>
       {/*<ProductGrid /*/}
       <List />
-      
+      <Do />
     </div>
   );
 };

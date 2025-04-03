@@ -21,12 +21,11 @@ const Nav = () => {
     }
   };
 
+  const [isOpen, setIsOpen] = useState(false);
 
-
-  const [showMe, setShowMe] = useState(false);
-  function toggle() {
-    setShowMe(!showMe);
-  }
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
@@ -39,8 +38,22 @@ const Nav = () => {
   const toggleButton = () => {
     setIsActive(!isActive);
   };
+
+  const [isStyled, setIsStyled] = useState(false);
+
+  const toggleStyle = () => {
+    setIsStyled(!isStyled);
+  };
+
   return (
     <div className={`active ${showi && "hidden"}`}>
+      <div
+        style={{
+          display: isStyled ? "hidden" : "hidden",
+        }}
+      >
+        <div className="absolute hidden top-0 left-0 w-full h-full bg-[#00000078]"></div>
+      </div>
       <div className="w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
         <ul className="w-[30%] h-full tiny flex max-sm:hidden relative">
           <div className="show block w-[33%]">
@@ -71,16 +84,17 @@ const Nav = () => {
           <p className="w-[55%] h-full pt-5 tiny hove bord text-center">
             <Link href="/contact">CONTACT</Link>
           </p>
-          
+
           <div className="w-[15%] h-full bord text-center hove">
             <p className="pt-5 tiny">EN</p>
           </div>
+
           <SearchBar />
+
           <div className="w-[15%] h-full hove">
-            <Link href={"/cart"} className="group relative">
-              <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]">
-                <CartIcon />
-              </PiShoppingCartThin>
+            <Link href={"/cart"} className="h-full justify-between w-full flex">
+              <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]"></PiShoppingCartThin>
+              <CartIcon />
             </Link>
           </div>
         </div>
@@ -146,9 +160,11 @@ const Nav = () => {
             <p className="pt-5 tiny">EN</p>
           </div>
           <div className="w-[50%] h-full hove">
-            <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]">
-              <CartIcon />
-            </PiShoppingCartThin>
+            <Link href={"/cart"} className="group relative">
+              <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]">
+                <CartIcon />
+              </PiShoppingCartThin>
+            </Link>
           </div>
         </div>
       </div>

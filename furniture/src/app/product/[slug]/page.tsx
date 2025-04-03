@@ -52,8 +52,8 @@ const SingleProductPage = async ({
         <div className="lg:h-[70vh] max-sm:hidden">
           {/*
           {product?.images && <ImageView images={product?.images}/>} */}
-          <div className="overflow-hidden">
-            <div className="slidely-track lg:h-[70vh] sm:h-[10vh]">
+          <div className="overflow-hidden mt-[-2rem] mb-8">
+            <div className="slidely-track lg:h-[75vh] sm:h-[10vh]">
               {product?.images && (
                 <Image
                   src={urlFor(product?.images[0]).url()}
@@ -61,7 +61,7 @@ const SingleProductPage = async ({
                   height={200}
                   alt="productimage"
                   priority
-                  className={`lg:mt-8 max-md:mt-[-2rem] sm:mt-2 slidely lg:ml-2 sm:ml-[24%] max-md:ml-0 object-cover`}
+                  className={`lg:mt-8 max-md:mt-[-2rem] sm:mt-2 slidely lg:ml-2 sm:ml-[24%] max-md:ml-0 object-cover cursor-grabbing`}
                 />
               )}
               {product?.images && (
@@ -71,7 +71,7 @@ const SingleProductPage = async ({
                   height={200}
                   alt="productimage"
                   priority
-                  className={`mt-8 slidely max-md:mt-[-2rem] max-sm:mt-16 ml-2 max-sm:ml-[24%] max-md:ml-0 object-cover`}
+                  className={`mt-8 slidely max-md:mt-[-2rem] max-sm:mt-16 ml-2 max-sm:ml-[24%] max-md:ml-0 object-cover cursor-grabbing`}
                 />
               )}
               {product?.images && (
@@ -81,7 +81,7 @@ const SingleProductPage = async ({
                   height={200}
                   alt="productimage"
                   priority
-                  className={`mt-8 slidely max-md:mt-[-2rem] max-sm:mt-16 ml-2 max-sm:ml-[24%] max-md:ml-0 object-cover`}
+                  className={`mt-8 slidely max-md:mt-[-2rem] max-sm:mt-16 ml-2 max-sm:ml-[24%] max-md:ml-0 object-cover cursor-grabbing`}
                 />
               )}
             </div>
@@ -91,7 +91,7 @@ const SingleProductPage = async ({
           className="
         w-full h-full sm:p-0 lg:p-4"
         >
-          <div className="w-full">
+          <div className="w-full pt-8">
             <div className="w-full pl-4 h-auto">
               <div className="flex pb-12 px-2 h-auto lg:w-[74%] lg:ml-[27%] max-sm:ml-4 max-sm:w-full flex-col">
                 <div className="lg:border-l-3 sm:border-l-1 border top-0 lg:h-[114.5rem] max-sm:h-[132rem] max-sm:left-2 absolute"></div>
@@ -108,7 +108,7 @@ const SingleProductPage = async ({
 
                     <div className="lg:w-[20rem] max-sm:mt-20 max-sm:w-full max-sm:text-left lg:text-right">
                       <div className="lg:text-2xl max-sm:text-[25px] font-bold text-[#231f20] w-full">
-                        <span className="lg:text-base lg:text-right max-sm:text-[25px]">
+                        <span className="lg:text-[1.5rem] lg:text-right max-sm:text-[25px]">
                           {priceFormat}
                         </span>
                       </div>
