@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import useCartStore from "../../../store";
+
 import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
