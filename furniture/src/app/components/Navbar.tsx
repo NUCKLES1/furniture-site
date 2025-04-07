@@ -93,7 +93,9 @@ const Navbar = () => {
 
         <ul className="w-[30%] h-full lg:hidden md:hidden tiny flex relative">
           <div className="w-[50%] text-center bord">
+            <Link href="/">
             <p className="pt-2 text-3xl text-[#231f20] font-bold">nb</p>
+            </Link>
           </div>
 
           <SearchBar />

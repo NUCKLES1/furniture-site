@@ -48,7 +48,6 @@ const Nav = () => {
 
   return (
     <div className={`active ${showi && "hidden"}`}>
-
       <div className="w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
         <ul className="w-[30%] h-full tiny flex max-sm:hidden relative">
           <div className="show block w-[33%]">
@@ -85,9 +84,6 @@ const Nav = () => {
           </div>
 
           <SearchBar />
-     
-
-
 
           <div className="w-[15%] h-full">
             <div className="w-full h-full hove" onClick={toggleStyle}>
@@ -100,27 +96,28 @@ const Nav = () => {
                 <CartIcon />
               </div>
             </div>
-              <div
-                style={{
-                  width: isStyled ? "28%" : "0",
-                  opacity: isStyled ? "1" : "0",
-                  transition: "width 1.2s ease-in-out",
-                  animationDelay: "opacity 2s ease-in-out",
-                }}
-                className="absolute top-[4rem] right-0 bg-[#ebebeb] h-[85vh] p-2 w-[0%] border overflow-hidden"
-              >
-                <Do />
+            <div
+              style={{
+                width: isStyled ? "28%" : "0",
+                opacity: isStyled ? "1" : "0",
+                transition: "width 1.2s ease-in-out",
+                animationDelay: "opacity 2s ease-in-out",
+              }}
+              className="absolute top-[4rem] right-0 bg-[#ebebeb] h-[85vh] p-2 w-[0%] border overflow-hidden"
+            >
+              <Do />
             </div>
           </div>
         </div>
 
         <ul className="w-[30%] h-full lg:hidden md:hidden tiny flex relative">
           <div className="w-[50%] text-center bord">
-            <p className="pt-2 text-3xl text-[#231f20] font-bold">nb</p>
+            <Link href="/">
+              <p className="pt-2 text-3xl text-[#231f20] font-bold">nb</p>
+            </Link>
           </div>
 
           <SearchBar />
-  
         </ul>
         <div className="show block lg:hidden md:hidden w-[40%]">
           <div className="ml-[40%] h-full maker pt-5 hove bord text-center">
@@ -161,21 +158,21 @@ const Nav = () => {
               </div>
             </div>
             <div
-                style={{
-                  width: isStyled ? "100%" : "0",
-                  opacity: isStyled ? "1" : "0",
-                  transition: "width 1.2s ease-in-out",
-                  animationDelay: "opacity 2s ease-in-out",
-                }}
-                className="absolute top-[-76vh] right-0 bg-[#ebebeb] h-[75vh] p-2 w-[0%] border overflow-hidden"
-              >
-                <Do />
-            </div>        
+              style={{
+                width: isStyled ? "100%" : "0",
+                opacity: isStyled ? "1" : "0",
+                transition: "width 1.2s ease-in-out",
+                animationDelay: "opacity 2s ease-in-out",
+              }}
+              className="absolute top-[-76vh] right-0 bg-[#ebebeb] h-[75vh] p-2 w-[0%] border overflow-hidden"
+            >
+              <Do />
+            </div>
           </div>
         </div>
       </div>
       <div
-        style={{   
+        style={{
           position: isStyled ? "fixed" : "absolute",
           opacity: isStyled ? "1" : "0",
           height: isStyled ? "100vh" : "0",
