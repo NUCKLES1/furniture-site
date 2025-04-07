@@ -14,7 +14,7 @@ const List = async () => {
       {products?.map((product: Product) => (
         <AnimatePresence key={product?._id}>
           <div
-            className="w-[24%] max-sm:w-[96%] max-sm:ml-3 max-sm:h-[27rem]
+            className="w-[24%] max-sm:w-[96%] max-sm:ml-3 max-sm:h-[25rem]
        h-full ima overflow-hidden ml-2 max-sm:mt-2 bg-[#e3e3e3]"
           >
             <ProductCard product={product} />

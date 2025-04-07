@@ -12,7 +12,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div>
       <div className="text-left pt-4 pl-2 text-[#231f20] cont">
-        <p className="liney max-sm:text-[25px]">{product?.title}</p>
+        <p className="liney max-sm:text-[23px]">{product?.title}</p>
         <p className="text-[12px] max-sm:text-[15px] mt-2">{product?.description}</p>
       </div>
 
