@@ -10,6 +10,7 @@ import CartIcon from "./CartIcon";
 import Categorys from "./Categorys";
 import { ClerkLoaded } from "@clerk/nextjs";
 import useCartStore from "../../../store";
+import Do from "./Do";
 
 const Nav = () => {
   const [showi, setShowi] = useState(true);
@@ -47,13 +48,7 @@ const Nav = () => {
 
   return (
     <div className={`active ${showi && "hidden"}`}>
-      <div
-        style={{
-          display: isStyled ? "hidden" : "hidden",
-        }}
-      >
-        <div className="absolute hidden top-0 left-0 w-full h-full bg-[#00000078]"></div>
-      </div>
+
       <div className="w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
         <ul className="w-[30%] h-full tiny flex max-sm:hidden relative">
           <div className="show block w-[33%]">
@@ -90,12 +85,32 @@ const Nav = () => {
           </div>
 
           <SearchBar />
+     
 
-          <div className="w-[15%] h-full hove">
-            <Link href={"/cart"} className="h-full justify-between w-full flex">
-              <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]"></PiShoppingCartThin>
-              <CartIcon />
-            </Link>
+
+
+          <div className="w-[15%] h-full">
+            <div className="w-full h-full hove" onClick={toggleStyle}>
+              <div className="h-full w-full flex">
+                {!isStyled ? (
+                  <PiShoppingCartThin className="w-6 h-6 mt-4 md:h-4 md:w-4 max-md:ml-1 max-md:mt-[0.7rem] ml-[1rem]" />
+                ) : (
+                  <LiaTimesSolid className="w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]" />
+                )}
+                <CartIcon />
+              </div>
+            </div>
+              <div
+                style={{
+                  width: isStyled ? "28%" : "0",
+                  opacity: isStyled ? "1" : "0",
+                  transition: "width 1.2s ease-in-out",
+                  animationDelay: "opacity 2s ease-in-out",
+                }}
+                className="absolute top-[4rem] right-0 bg-[#ebebeb] h-[85vh] p-2 w-[0%] border overflow-hidden"
+              >
+                <Do />
+            </div>
           </div>
         </div>
 
@@ -168,6 +183,17 @@ const Nav = () => {
           </div>
         </div>
       </div>
+      <div
+        style={{   
+          position: isStyled ? "fixed" : "absolute",
+          opacity: isStyled ? "1" : "0",
+          height: isStyled ? "100vh" : "0",
+          display: isStyled ? "block" : "none",
+        }}
+        onClick={toggleStyle}
+        className="hidden
+          top-0 left-0 z-10 w-full bg-[#00000078]"
+      ></div>
     </div>
   );
 };

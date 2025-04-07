@@ -24,9 +24,6 @@ const Quantity = ({ product, className }: Props) => {
     }
   };
 
-  console.log(itemCount);
-  console.log(handleRemoveProduct);
-
   return (
     <div className="flex items-center gap-1 text-base">
       <button

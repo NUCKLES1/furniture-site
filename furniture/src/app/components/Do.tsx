@@ -7,6 +7,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import Loading from "./Loading";
+import PriceView from "./PriceView";
+import toast from "react-hot-toast";
+import { PiMinus, PiPlus } from "react-icons/pi";
+import { LiaTimesSolid } from "react-icons/lia";
 
 const Do = () => {
   const {
@@ -14,6 +18,8 @@ const Do = () => {
     getTotalPrice,
     getItemCount,
     resetCart,
+    addItem,
+    removeItem,
     getGroupedItems,
   } = useCartStore();
 
@@ -23,18 +29,23 @@ const Do = () => {
     state.items.reduce((total, item) => total + item.quantity, 0)
   );
 
-  const [isClient, setIsClient] = useState(false)
+  const [isClient, setIsClient] = useState(false);
+
+  const handleDelete = (id: string) => {
+    deleteCartProduct(id);
+    toast.success("Product Deleted Successfully");
+  };
 
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
   if (!isClient) {
     return <Loading />;
   }
 
   return (
-    <div className="w-full absolute h-screen top-0 bg-[#00000076]">
-      <div className="absolute top-[4.5rem] bg-[#ebebeb] h-[85vh] p-2 w-[25%] border">
+
+      <div className="w-full h-full">
         <div
           style={{
             transition: "background-color 0.3s ease",
@@ -42,48 +53,99 @@ const Do = () => {
         >
           <div className=" w-full flex justify-between ">
             <div>
-              <p className=" bold text-[#231f20] text-[44px] leading-none">
+              <p className=" bold text-[#231f20] max-sm:text-[54px] text-[44px] leading-none">
                 CART
               </p>
             </div>
             <div>
-              <p className=" bold text-[#231f20] text-[44px] leading-none">
+              <p className=" bold max-sm:text-[54px] text-[#231f20] text-[44px] leading-none">
                 {itemCount}
               </p>
             </div>
           </div>
           <div className=" mt-4 bord-t border-[#00000094]"></div>
-          <div className="h-[47vh] pt-4 w-full">
+          <div className="h-[47vh] max-sm:h-[55vh] overflow-auto w-full">
             {cartProducts?.length ? (
               <>
                 {cartProducts?.map(({ product }) => {
                   return (
                     <div
-                      className="flex flex-1 items-center gap-2 h-16 md:h-44"
+                      className="p-2 flex border-b border-black h-26"
                       key={product._id}
                     >
                       {product?.images && (
                         <Link
                           href={`/product/${product?.slug?.current}`}
-                          className="border p-6 md:p-1 mr-2 rounded-md  overflow-hidden group"
+                          className="   overflow-hidden group"
                         >
                           <Image
                             src={urlFor(product?.images[0]).url()}
                             alt="productImage"
-                            width={100}
+                            width={140}
                             height={100}
                             loading="lazy"
-                            className="w-52 md:w-40 h-16 md:h-40 object-cover group-hover:scale-105 overflow-hidden duration-300"
+                            className="w-18 h-18  object-cover group-hover:scale-110 overflow-hidden duration-300 bg-pink-300"
                           />
                         </Link>
                       )}
+                      <div className="w-full pt-2 pl-2">
+                        <div className="w-full flex justify-between">
+                          <div>
+                            <p className="font-semibold leading-3">
+                              {product.title}
+                            </p>
+                            <span className="text-[12px] font-normal">
+                              {product.description}
+                            </span>
+                          </div>
+                          <div>
+                            {" "}
+                            <PriceView
+                              price={
+                                product?.price ? product?.price * itemCount : 0
+                              }
+                            />
+                          </div>
+                        </div>
+                        <div className="flex items-center mt-2 border-t border-b border-black text-base">
+                          <button
+                            onClick={() => removeItem(product._id)}
+                            className={
+                              "p-3 text-center border-r border-black text-[#231f20] hover:bg-[#231f20] duration-300 hover:text-white"
+                            }
+                          >
+                            <PiMinus className="text-[18px]" />
+                          </button>
+                          <span className="font-semibold w-12 text-center text-[#231f20] text-[14px]">
+                            {itemCount}
+                          </span>
+                          <button
+                            onClick={() => {
+                              addItem(product);
+                              toast.success(
+                                `${product?.title?.substring(0, 12)}... added successfully`
+                              );
+                            }}
+                            className="p-3 text-[#231f20] text-center border-r border-l border-black hover:bg-[#231f20] duration-300 hover:text-white"
+                          >
+                            <PiPlus className="text-[18px]" />
+                          </button>
+                          <button
+                            className="p-3 text-[#231f20] text-center border-r border-black hover:bg-[#231f20] duration-300 hover:text-white"
+                            onClick={() => handleDelete(product?._id)}
+                          >
+                            <LiaTimesSolid className="text-[18px]"/>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
               </>
             ) : (
-              <div className="tiny">
+              <div className="tiny text-left pt-4">
                 {" "}
+                {/*  */}
                 <p>YOUR CART IS EMPTY</p>
               </div>
             )}
@@ -91,9 +153,9 @@ const Do = () => {
         </div>
 
         <div>
-          <div className="w-full bord-t flex justify-between">
+          <div className="w-full py-4 bord-t flex uppercase justify-between">
             <p>SUBTOTAL</p>
-            <p>total</p>
+            <PriceView price={getTotalPrice()} />
           </div>
           <button className="border  mt-2 cursor-pointer w-full py-5 tiny text-white hover:text-[#231f20] hover:bg-[#ebebeb] ease-in-out	duration-200 bg-[#231f20]">
             CHECKOUT
@@ -103,7 +165,6 @@ const Do = () => {
           </button>
         </div>
       </div>
-    </div>
   );
 };
 

@@ -87,9 +87,11 @@
 }
 
 .webi {
-  font-weight: bold;
+  font-weight: bolder;
   color: #231f20;
   -webkit-text-stroke: 0px  #231f20;
+  font-size: 35px;
+  transition: ease-in-out 0.2s;
 }
 
 .hov:hover {
@@ -444,5 +446,40 @@ opacity: 0;
   .texty {
     font-size: 18px;
     line-height: 30px;
+  }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  display: inline-block;
+  width: 3px;
+  height: 10px;
+  background-color: transparent;
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 25px;
+  margin: 0 5px;
+  animation-delay: .25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #231f20;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
   }
 }

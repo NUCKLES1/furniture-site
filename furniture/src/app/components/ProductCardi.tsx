@@ -11,7 +11,8 @@ const ProductCardi = ({ product }: { product: Product }) => {
     <div className="bg-[#ebebeb]">
       <div className="bg-gradient-to-r from-zinc-200 via-zinc-2 to-zinc-200">
         {product?.images && (
-          <Link href={`/product/${product?.slug?.current}`}>
+          <Link href={`/product/${product?.slug?.current}`}
+          className="group">
             <Image
               src={urlFor(product?.images[0]).url()}
               width={300}

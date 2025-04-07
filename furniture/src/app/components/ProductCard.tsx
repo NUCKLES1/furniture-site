@@ -16,7 +16,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <p className="text-[12px] max-sm:text-[15px] mt-2">{product?.description}</p>
       </div>
 
-      <div>
+      <div className="group">
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`}>
             <Image
@@ -25,14 +25,14 @@ const ProductCard = ({ product }: { product: Product }) => {
               height={200}
               alt="productimage"
               priority
-              className={`mt-8 max-md:mt-[-2rem] max-sm:mt-16 cale ml-12 max-sm:ml-[24%] hover:scale-105 max-md:ml-0 ${product?.stock !== 0 && "group-hover:scale-105 cale"}`}
+              className={`mt-8 max-md:mt-[-2rem] max-sm:mt-16 cale ml-12 max-sm:ml-[24%] hover:scale-110 max-md:ml-0 ${product?.stock !== 0 && "group-hover:scale-110 cale"}`}
             />
           </Link>
         )}
         {product?.stock === 0 && (
-          <div className="absolute top-0 left-0 w-full h-full bg-black/50">
-            <p className="text-white text-center font-semibold text-base">
-              Out of Stock
+          <div className="absolute top-0 left-0 w-full h-full text-center bg-black/10">
+            <p className="text-[#231f20] text-center text-[40px] font-bold pt-[45%]">
+              OUT OF STOCK
             </p>
           </div>
         )}

@@ -26,7 +26,6 @@ const Section2  = () => {
       </div>
       {/*<ProductGrid /*/}
       <List />
-      <Do />
     </div>
   );
 };

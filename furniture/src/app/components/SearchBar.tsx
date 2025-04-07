@@ -65,7 +65,7 @@ const SearchBar = () => {
     <>
       <button
         onClick={toggleStyle}
-        className="w-[15%] h-full bord text-center pb-6 hove"
+        className="lg:w-[15%] max-sm:w-[50%] h-full max-sm:px-3 bord text-center pb-6 hove"
       >
         {!isStyled ? (
           <CiSearch className="w-6 h-6 mt-4 md:h-4 transition-all duration-500 md:w-4 max-md:ml-1 max-md:mt-[0.7rem] ml-[1rem]" />
@@ -73,8 +73,8 @@ const SearchBar = () => {
           <LiaTimesSolid className="w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]" />
         )}
       </button>
-      <div className=" left-0 top-[3.3rem] w-full bg-[#03a77e] absolute"
-      >
+      <div>
+      <div className=" left-0 z-20 max-sm:top-[-88vh] max-sm:w-[43.5vh] top-[3.3rem] w-full bg-[#03a77e] absolute">
         <div
           style={{
             height: isStyled ? "87vh" : "0",
@@ -84,38 +84,40 @@ const SearchBar = () => {
           }}
           className=" w-full flex left-0 top-[3.3rem] "
         >
-          <div className="w-[28.8%] bordi h-full"></div>
-          <div className="w-[70%]">
+          <div className="w-[28.8%] max-sm:w-[10%] bordi h-full"></div>
+          <div className="w-[70%] max-sm:w-[88%]">
             <form action="">
               <input
                 type="text"
                 placeholder="SEARCH"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-4 bg-transparent uppercase text-[6rem] bordb font-bold outline-none text-black"
+                className="w-full pl-4 bg-transparent uppercase text-[6rem] max-sm:text-5xl max-sm:pt-8 max-sm:pb-4 bordb font-bold outline-none text-black"
               />
             </form>
           </div>
-          <div className="absolute tide left-0">
+          <div className="absolute max-sm:ml-[12%] max-sm:h-[80%] overflow-auto max-sm:w-[85%]  max-sm:top-[17%] tide left-0">
             {loading ? (
               <p>Searching in Progress...</p>
             ) : products.length ? (
               products.map((product: Product) => (
-                <div key={product?._id}>
-                  <div className="w-full flex mt-2 h-[6rem] max-sm:w-[96%] max-sm:ml-3 max-sm:h-[25rem] ima overflow-hidden ml-2 max-sm:mt-2">
-                    <Link href={`/product/${product?.slug?.current}`}>
-                      {product?.images && (
-                        <Image
-                          src={urlFor(product?.images[0]).url()}
-                          width={100}
-                          height={100}
-                          className="w-[6rem] h-[6rem]  bg-[#e3e3e3]"
-                          alt="image"
-                        />
-                      )}
-                    </Link>
-                  </div>
-                  <div className="w-[76rem] mt-20 h-[20rem] absolute left-2 overflow-y-hidden">
+                  <div key={product?._id}>
+                    <div className="w-[8rem] mb-[12rem] max-sm:w-[60%] h-full gap-2 lg:hidden max-sm:mb-2 ">
+                      <Link href={`/product/${product?.slug?.current}`}
+                      className="">
+                        {product?.images && (
+                          <Image
+                            src={urlFor(product?.images[0]).url()}
+                            width={400}
+                            height={400}
+                            className="w-full h-[12rem]  bg-[#e3e3e3]"
+                            alt="image"
+                          />
+                        )}
+                      </Link>
+                    </div>
+
+                  <div className="w-[76rem] max-sm:hidden mt-20 h-[20rem] absolute left-2 overflow-y-hidden">
                     <Link href={`/product/${product?.slug?.current}`}>
                       <ul className="flex justify-between text-[#231f20] uppercase px-4 mi text-[18px] font-bold transition-all delay-100 hover:bg-[#231f20] hover:text-[#ffffff]">
                         <li>{product?.brand}</li>
@@ -140,6 +142,18 @@ const SearchBar = () => {
             )}
           </div>
         </div>
+        </div>
+        <div
+        style={{   
+          position: isStyled ? "fixed" : "absolute",
+          opacity: isStyled ? "1" : "0",
+          height: isStyled ? "100vh" : "0",
+          display: isStyled ? "block" : "none",
+        }}
+        onClick={toggleStyle}
+        className="hidden
+          top-0 left-0 z-10 w-full bg-[#00000078]"
+      ></div>
       </div>
     </>
   );

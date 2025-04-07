@@ -189,7 +189,7 @@ const SingleProductPage = async ({
               <div className="lg:flex ml-[-0.5rem] sm:block max-sm:h-auto h-[110vh] w-full">
                 <div className="w-[50%] font-bold uppercase text-[#231f20] pt-40 lg:pl-16 leading-10 max-sm:text-[2.5rem] lg:text-[3rem]">
                   <p>
-                    dice <br /> collections
+                  {product?.title}<br /> collections
                   </p>
                 </div>
                 <div className="lg:w-[50%] object-contain sm:w-full max-sm:h-[20rem] overflow-hidden">

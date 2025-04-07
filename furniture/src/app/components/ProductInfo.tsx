@@ -52,13 +52,13 @@ export function ProductInfo  ({ product, className }: Props) {
             </div>
           </div>
           <div className="absolute left-0 border-line w-full"></div>
-          <div className="sm:block w-full h-auto lg:flex">
+          <div className="sm:block w-full h-auto lg:flex mt-8">
             <p className="tiny max-sm:text-[14px] uppercase sm:ml-0 lg:ml-[-5rem] mb-[-4rem] mt-8 pb-4">
               Description
             </p>
-            <p className="lg:w-[80%] max-sm:text-2xl max-sm:w-full max-sm:pt-14 max-sm:pl-0 h-auto lg:pl-8">
+            <div className="lg:w-[80%] max-sm:text-2xl max-sm:w-full max-sm:pt-14 max-sm:pl-0 h-auto lg:pl-8">
               {product?.subtext}
-            </p>
+            </div>
           </div>
         </div>
         <div className="max-sm:mt-[30rem]">

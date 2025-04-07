@@ -7,6 +7,7 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { PiShoppingCartThin } from "react-icons/pi";
 import SearchBar from "./SearchBar";
 import CartIcon from "./CartIcon";
+import Do from "./Do";
 
 const Navbar = () => {
   const [showi, setShowi] = useState(true);
@@ -29,9 +30,15 @@ const Navbar = () => {
   const toggleButton = () => {
     setIsActive(!isActive);
   };
+
+  const [isStyled, setIsStyled] = useState(false);
+
+  const toggleStyle = () => {
+    setIsStyled(!isStyled);
+  };
   return (
     <div>
-      <div className="w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
+      <div className="w-[98%] max-sm:w-[95%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
         <ul className="w-[30%] h-full tiny flex max-sm:hidden relative">
           <div className="show block w-[33%]">
             <Link href={"/shop"}>
@@ -59,12 +66,28 @@ const Navbar = () => {
             <p className="pt-5 tiny">EN</p>
           </div>
           <SearchBar />
-          <div className="w-[15%] h-full hove">
-            <Link href={"/cart"} className="h-full w-full flex">
-              
-              <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]"></PiShoppingCartThin>
-              <CartIcon />
-            </Link>
+          <div className="w-[15%] h-full">
+            <div className="w-full h-full hove" onClick={toggleStyle}>
+              <div className="h-full w-full flex">
+                {!isStyled ? (
+                  <PiShoppingCartThin className="w-6 h-6 mt-4 md:h-4 md:w-4 max-md:ml-1 max-md:mt-[0.7rem] ml-[1rem]" />
+                ) : (
+                  <LiaTimesSolid className="w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]" />
+                )}
+                <CartIcon />
+              </div>
+            </div>
+            <div
+                style={{
+                  width: isStyled ? "28%" : "0",
+                  opacity: isStyled ? "1" : "0",
+                  transition: "width 1.2s ease-in-out",
+                  animationDelay: "opacity 2s ease-in-out",
+                }}
+                className="absolute top-[4rem] right-0 bg-[#ebebeb] h-[85vh] p-2 w-[0%] border overflow-hidden"
+              >
+                <Do />
+            </div>        
           </div>
         </div>
 
@@ -72,32 +95,9 @@ const Navbar = () => {
           <div className="w-[50%] text-center bord">
             <p className="pt-2 text-3xl text-[#231f20] font-bold">nb</p>
           </div>
-          <div className="w-[50%] h-full bord hove">
-            <button
-              onClick={() => setIsActive((prev) => !prev)}
-              className="w-full h-full text-center max-sm:ml-4 pb-2 hove"
-            >
-              {!isActive ? (
-                <CiSearch className="w-6 h-6 mt-4 md:h-4 md:w-4 max-md:ml-1 max-md:mt-[0.7rem]" />
-              ) : (
-                <LiaTimesSolid className="w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]" />
-              )}
-            </button>
-            {isActive && (
-              <div className="bg-[#000000] w-full">
-                <div className="absolute w-[45vh] h-[90.5vh] flex left-0 top-[-91vh] bg-[#03a77e]">
-                  <div className="w-[15%] bordi h-full"></div>
-                  <div className="w-[85%]">
-                    <input
-                      type="text"
-                      placeholder="SEARCH"
-                      className="w-full pl-4 bg-transparent text-[3rem] pt-16 bordb font-bold outline-none text-black"
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+
+          <SearchBar />
+  
         </ul>
         <div className="show block lg:hidden md:hidden w-[40%]">
           <div className="ml-[40%] h-full maker pt-5 hove bord text-center">
@@ -126,11 +126,42 @@ const Navbar = () => {
           <div className="w-[50%] h-full bord text-center hove">
             <p className="pt-5 tiny">EN</p>
           </div>
-          <div className="w-[50%] h-full hove">
-            <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]" />
+          <div className="w-[50%] h-full">
+            <div className="w-full pl-2 h-full hove" onClick={toggleStyle}>
+              <div className="h-full w-full flex">
+                {!isStyled ? (
+                  <PiShoppingCartThin className="w-6 h-6 mt-4 md:h-4 md:w-4 max-md:ml-1 max-md:mt-[0.7rem] ml-[1rem]" />
+                ) : (
+                  <LiaTimesSolid className="w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]" />
+                )}
+                <CartIcon />
+              </div>
+            </div>
+            <div
+                style={{
+                  width: isStyled ? "100%" : "0",
+                  opacity: isStyled ? "1" : "0",
+                  transition: "width 1.2s ease-in-out",
+                  animationDelay: "opacity 2s ease-in-out",
+                }}
+                className="absolute top-[-86vh] right-0 bg-[#ebebeb] h-[85vh] p-2 w-[0%] border overflow-hidden"
+              >
+                <Do />
+            </div>        
           </div>
         </div>
       </div>
+      <div
+        style={{   
+          position: isStyled ? "fixed" : "absolute",
+          opacity: isStyled ? "1" : "0",
+          height: isStyled ? "100vh" : "0",
+          display: isStyled ? "block" : "none",
+        }}
+        onClick={toggleStyle}
+        className="hidden
+          top-0 left-0 z-10 w-full bg-[#00000078]"
+      ></div>
     </div>
   );
 };

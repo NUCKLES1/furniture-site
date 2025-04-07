@@ -14,7 +14,7 @@ const page = async () => {
     
     
   return (
-    <div className=' bg-[#ebebeb] mx-2 h-auto overflow-hidden'>
+    <div className=' bg-[#ebebeb] px-2 h-auto overflow-hidden'>
         <Navbar />
         <Categorys categories={categories}  />
         <AllProduct />

@@ -27,11 +27,11 @@ function AddToCartButton ({ product, className }: Props) {
     <div className="w-full">
     { itemCount ? (
       <div className="w-full text-sm">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between my-2">
           <span className="">Quantity</span>
           <Quantity product={product}/>
         </div>
-        <div className="flex items-center justify-between border-t pt-1">
+        <div className="flex items-center justify-between border-t pb-1">
           <span>Subtotal</span>
           <PriceView price={product?.price ? product?.price*itemCount:0}/>
         </div>

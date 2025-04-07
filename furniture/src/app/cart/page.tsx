@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const CartPage = () => {
   const [isClient, setIsClient] = useState(false);
@@ -19,12 +20,19 @@ const CartPage = () => {
     resetCart,
     getGroupedItems,
   } = useCartStore();
-  
+
   useEffect(() => {
     setIsClient(true);
   }, []);
   if (!isClient) {
     return <Loading />;
+  }
+
+  const handleResetCart = () => {
+    const confirmed = window.confirm("Are you sure to reset your cart");
+    if (confirmed) {
+      toast.success("Your cart reset successfully")
+    }
   }
 
   const cartProducts = getGroupedItems();
@@ -74,7 +82,7 @@ const CartPage = () => {
                       </div>
                       <div className="lg:col-span-2 rounded-lg"></div>
                     </div>
-                    
+                   <button className="" onClick={handleResetCart}>reset</button> 
                   </div>
                 );
               })}
