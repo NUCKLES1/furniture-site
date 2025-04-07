@@ -21,7 +21,7 @@ const CategoryPage = async ({params,}:{params: Promise<{slug: string}>}) => {
         {slug && slug}
        </span>
       </div>
-       */}
+       */}  
       <CategoryProducts categories={categories} slug={slug} />
     </div>
     </>

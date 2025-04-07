@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { Product } from "./sanity.types";
 
+
 interface BasketItem {
   product: Product;
   quantity: number;
