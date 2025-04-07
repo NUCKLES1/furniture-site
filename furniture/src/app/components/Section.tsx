@@ -15,7 +15,7 @@ const Section = () => {
         
             </div>
             <div className=' w-full absolute justify-center text-center max-sm:top-0 top-0 mt-4'>
-                <p className='bigi text-[145px] max-md:text-[75px] max-md:mt-[-0.9rem] mt-[-4rem] max-sm:text-[38px]'>NUCKLES DAAN</p>
+                <p className='bigi text-[145px] max-md:text-[75px] max-md:mt-[-0.9rem] mt-[-4rem] max-sm:text-[40px]'>NUCKLES DAAN</p>
                 <ul className='w-full items-center mt-[-2rem] max-md:mt-[-1rem] justify-center text-center tiny flex'>
                     <li className='pt-5 cursor-pointer text-center'>SHOP</li>
                     <li className='ml-8 pt-5 cursor-pointer text-center'>ABOUT</li>

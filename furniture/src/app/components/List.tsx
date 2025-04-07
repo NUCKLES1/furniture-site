@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const List = async () => {
 
-  const products: Product[] = await getTablesData();
+  const products: Product[] = await getProductsData();
   return (
     <div className="w-full mt-12 flex ml-1 max-md:h-[45vh] max-md:w-[98%] max-sm:ml-0 max-sm:block max-sm:h-auto h-[60vh]">
       {products?.map((product: Product) => (

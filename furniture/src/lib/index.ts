@@ -13,6 +13,9 @@ const allProductsQuery = groq`*[_type == 'product'][]{
 const recomendedQuery = groq`*[_type == 'product'][0...6]{
     ...
  }|order(_createdAt asc)`;
+{/*const tablesQuery = groq`*[_type == 'product' && references(*[_type == 'category' && slug.current == 'frags']._id)][0...4]{
+    ...
+ }|order(_createdAt asc)`;*/}
 const tablesQuery = groq`*[_type == 'product' && references(*[_type == 'category' && slug.current == 'frags']._id)][0...4]{
     ...
  }|order(_createdAt asc)`;
