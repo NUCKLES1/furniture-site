@@ -38,7 +38,7 @@ const Navbar = () => {
   };
   return (
     <div>
-      <div className="w-[98%] max-sm:w-[95%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
+      <div className="w-[98%] max-sm:w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
         <ul className="w-[30%] h-full tiny flex max-sm:hidden relative">
           <div className="show block w-[33%]">
             <Link href={"/shop"}>
@@ -144,7 +144,7 @@ const Navbar = () => {
                   transition: "width 1.2s ease-in-out",
                   animationDelay: "opacity 2s ease-in-out",
                 }}
-                className="absolute top-[-86vh] right-0 bg-[#ebebeb] h-[85vh] p-2 w-[0%] border overflow-hidden"
+                className="absolute top-[-76vh] right-0 bg-[#ebebeb] h-[75vh] p-2 w-[0%] border overflow-hidden"
               >
                 <Do />
             </div>        

@@ -116,55 +116,30 @@ const Nav = () => {
 
         <ul className="w-[30%] h-full lg:hidden md:hidden tiny flex relative">
           <div className="w-[50%] text-center bord">
-            <p className="pt-2 text-3xl text-[#231f20] font-bold">ba</p>
+            <p className="pt-2 text-3xl text-[#231f20] font-bold">nb</p>
           </div>
-          <div className="w-[50%] h-full bord hove">
-            <button
-              onClick={() => setIsActive((prev) => !prev)}
-              className="w-full h-full text-center max-sm:ml-4 pb-2 hove"
-            >
-              {!isActive ? (
-                <CiSearch className="w-6 h-6 mt-4 md:h-4 md:w-4 max-md:ml-1 max-md:mt-[0.7rem]" />
-              ) : (
-                <LiaTimesSolid className="w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]" />
-              )}
-            </button>
-            {isActive && (
-              <div className="bg-[#000000] w-full">
-                <div className="absolute w-[45vh] h-[90.5vh] flex left-0 top-[-91vh] bg-[#03a77e]">
-                  <div className="w-[15%] bordi h-full"></div>
-                  <div className="w-[85%]">
-                    <input
-                      type="text"
-                      placeholder="SEARCH"
-                      className="w-full pl-4 bg-transparent text-[3rem] pt-16 bordb font-bold outline-none text-black"
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+
+          <SearchBar />
+  
         </ul>
         <div className="show block lg:hidden md:hidden w-[40%]">
-          <div className="pl-[40%] h-full pt-5 hove bord text-center">
+          <div className="ml-[40%] h-full maker pt-5 hove bord text-center">
             <label className="burger">
+              <input type="checkbox" id="burger" />
               <span></span>
               <span></span>
             </label>
           </div>
           <div className="hidy">
             <ul className="border bg-[#231f20]">
-              <li className="w-full h-[52px] px-14 pt-5 text-[#ebebed] hovee text-center">
-                <Link href="/"> HOME</Link>
-              </li>
-              <li className="w-full h-[52px] px-14 pt-5 text-[#ebebed] hovee text-center">
-                <Link href="/shop"> SHOP</Link>
+              <li className="w-full h-[52px] pt-5 text-[#ebebed] hovee text-center">
+                SHOP
               </li>
               <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center">
-                <Link href="/about">ABOUT</Link>
+                ABOUT
               </li>
-              <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center pb-4">
-                <Link href="/contact">CONTACT</Link>
+              <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center">
+                JOURNAL
               </li>
             </ul>
           </div>
@@ -174,12 +149,28 @@ const Nav = () => {
           <div className="w-[50%] h-full bord text-center hove">
             <p className="pt-5 tiny">EN</p>
           </div>
-          <div className="w-[50%] h-full hove">
-            <Link href={"/cart"} className="group relative">
-              <PiShoppingCartThin className="w-6 h-6 md:h-4 md:w-4 max-md:ml-4 md:mt-4 mt-[0.8rem] ml-[1rem]">
+          <div className="w-[50%] h-full">
+            <div className="w-full pl-2 h-full hove" onClick={toggleStyle}>
+              <div className="h-full w-full flex">
+                {!isStyled ? (
+                  <PiShoppingCartThin className="w-6 h-6 mt-4 md:h-4 md:w-4 max-md:ml-1 max-md:mt-[0.7rem] ml-[1rem]" />
+                ) : (
+                  <LiaTimesSolid className="w-6 h-6 md:h-4 md:w-4 max-md:ml-1 md:mt-4 mt-[0.8rem] ml-[1rem]" />
+                )}
                 <CartIcon />
-              </PiShoppingCartThin>
-            </Link>
+              </div>
+            </div>
+            <div
+                style={{
+                  width: isStyled ? "100%" : "0",
+                  opacity: isStyled ? "1" : "0",
+                  transition: "width 1.2s ease-in-out",
+                  animationDelay: "opacity 2s ease-in-out",
+                }}
+                className="absolute top-[-76vh] right-0 bg-[#ebebeb] h-[75vh] p-2 w-[0%] border overflow-hidden"
+              >
+                <Do />
+            </div>        
           </div>
         </div>
       </div>

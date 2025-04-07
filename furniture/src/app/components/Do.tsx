@@ -64,7 +64,7 @@ const Do = () => {
             </div>
           </div>
           <div className=" mt-4 bord-t border-[#00000094]"></div>
-          <div className="h-[47vh] max-sm:h-[55vh] overflow-auto w-full">
+          <div className="h-[47vh] max-sm:h-[45vh] overflow-auto w-full">
             {cartProducts?.length ? (
               <>
                 {cartProducts?.map(({ product }) => {

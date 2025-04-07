@@ -74,10 +74,10 @@ const SearchBar = () => {
         )}
       </button>
       <div>
-      <div className=" left-0 z-20 max-sm:top-[-88vh] max-sm:w-[43.5vh] top-[3.3rem] w-full bg-[#03a77e] absolute">
+      <div className=" left-0 z-20 max-sm:top-[-80vh] max-sm:w-[45vh] top-[3.3rem] w-full bg-[#03a77e] absolute">
         <div
           style={{
-            height: isStyled ? "87vh" : "0",
+            height: isStyled ? "79vh" : "0",
             opacity: isStyled ? "1" : "0",
             transition: "height 1.2s ease-in-out",
             animationDelay: "opacity 2s ease-in-out",
