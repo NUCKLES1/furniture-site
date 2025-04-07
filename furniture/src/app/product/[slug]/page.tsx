@@ -192,7 +192,7 @@ const SingleProductPage = async ({
                   {product?.title}<br /> collections
                   </p>
                 </div>
-                <div className="lg:w-[50%] object-contain sm:w-full max-sm:h-[20rem] overflow-hidden">
+                <div className="lg:w-[50%] object-contain sm:w-full max-sm:h-[40rem] overflow-hidden">
                   <div>
                     {product?.images && (
                       <Image
