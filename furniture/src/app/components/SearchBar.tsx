@@ -74,7 +74,7 @@ const SearchBar = () => {
         )}
       </button>
       <div>
-      <div className=" left-0 z-20 max-sm:top-[-80vh] max-sm:w-[45vh] top-[3.3rem] w-full bg-[#03a77e] absolute">
+      <div className=" left-0 z-20 max-sm:top-[-75vh] max-sm:w-[47vh] top-[3.3rem] w-full bg-[#03a77e] absolute">
         <div
           style={{
             height: isStyled ? "79vh" : "0",
