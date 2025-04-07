@@ -92,7 +92,7 @@ const SearchBar = () => {
                 placeholder="SEARCH"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-4 bg-transparent uppercase text-[6rem] max-sm:text-5xl max-sm:pt-8 max-sm:pb-4 bordb font-bold outline-none text-black"
+                className="w-full pl-4 bg-transparent uppercase text-[6rem] max-sm:text-5xl max-sm:pt-4 max-sm:pb-2 bordb font-bold outline-none text-black"
               />
             </form>
           </div>
