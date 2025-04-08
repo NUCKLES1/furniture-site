@@ -22,7 +22,7 @@ const RecomendData = ({ product }: { product: Product }) => {
                 height={200}
                 alt="productimage"
                 priority
-                className={`mt-8 max-md:mt-[-2rem] max-sm:mt-16 cale ml-6 max-sm:mx-[16%] hover:scale-110 max-md:ml-0 ${product?.stock !== 0 && "group-hover:scale-110 cale"}`}
+                className={`mt-8 max-md:mt-[-2rem] max-sm:mt-16 cale ml-0 max-sm:mx-auto hover:scale-110 max-md:ml-0 ${product?.stock !== 0 && "group-hover:scale-110 cale"}`}
               />
             </Link>
           )}
