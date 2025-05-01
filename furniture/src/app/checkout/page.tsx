@@ -46,14 +46,6 @@ const page = () => {
 
   const price = getTotalFeePrice();
 
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-  if (!isClient) {
-    return <Loading />;
-  }
 
   return (
     <div className="w-full h-full">
