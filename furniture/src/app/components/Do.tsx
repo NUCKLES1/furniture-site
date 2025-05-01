@@ -32,10 +32,9 @@ const Do = () => {
 
   const [isClient, setIsClient] = useState(false);
 
-  const handleDelete = (id: string) => {
-    deleteCartProduct(id);
-    toast.success("Product Deleted Successfully");
-  };
+  const handleCheckout=()=>{
+    toast.error('Checkout on process')
+  }
 
   useEffect(() => {
     setIsClient(true);
@@ -64,7 +63,7 @@ const Do = () => {
           </div>
         </div>
         <div className=" mt-4 bord-t border-[#00000094]"></div>
-        <div className="h-[47vh] max-sm:h-[43vh] overflow-auto w-full">
+        <div className="h-[44vh] max-sm:h-[43vh] overflow-auto w-full">
           {cartProducts?.length ? (
             <>
               {cartProducts?.map(({ product }) => {
@@ -101,13 +100,14 @@ const Do = () => {
                         <div>
                           {" "}
                           <PriceView
-                            price={(product?.price as number) * itemCount}
+                            price={(product?.price as number)}
                           />
                         </div>
                       </div>
-                    </div>
-                    <CartQuantity product={product}/>
+                      <CartQuantity product={product}/>
+                    </div>                 
                   </div>
+
                 );
               })}
             </>
@@ -122,13 +122,17 @@ const Do = () => {
       </div>
 
       <div>
-        <div className="w-full py-4 bord-t flex uppercase justify-between">
-          <p>SUBTOTAL</p>
+        <div className="w-full py-2 bord-t flex uppercase justify-between">
+          <p>TOTAL</p>
           <PriceView price={getTotalPrice()} />
         </div>
-        <button className="border  mt-2 cursor-pointer w-full py-5 tiny text-white hover:text-[#231f20] hover:bg-[#ebebeb] ease-in-out	duration-200 bg-[#231f20]">
+        <Link href="/checkout">
+        <button
+        onClick={handleCheckout}
+        className="border  mt-2 cursor-pointer w-full py-5 tiny text-white hover:text-[#231f20] hover:bg-[#ebebeb] ease-in-out	duration-200 bg-[#231f20]">
           CHECKOUT
         </button>
+        </Link>
         <button className="border mt-2 cursor-pointer w-full py-5 tiny text-[#231f20] hover:text-[#ebebeb] hover:bg-[#231f20] ease-in-out	duration-200 bg-[#ebebeb]">
           CONTINUE SHOPPING
         </button>
