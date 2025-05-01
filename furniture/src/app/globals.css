@@ -58,14 +58,12 @@
 
 .hove:hover {
   background-color: #231f20;
-  color: #ebebed;
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .hovering:hover {
   background-color: #231f20;
-  color: #ebebed;
   transition: 0.1s ease-in-out;
   cursor: pointer;
 }

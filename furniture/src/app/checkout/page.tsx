@@ -11,6 +11,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { PaystackButton } from 'react-paystack'
 import CheckoutQuantity from "../components/CheckoutQuantity";
 import router, {useRouter} from "next/router";
+import CheckoutNav from "../components/CheckoutNav";
 
 
 const page = () => {
@@ -24,7 +25,7 @@ const page = () => {
 
   const handleSuccess = () => {
     // Payment successful, navigate to another page
-    router.push('/');
+    router.push('/cart');
   };
 
   const handleClose = () => {
@@ -55,10 +56,12 @@ const page = () => {
   }
 
   return (
-    <div className="bg-[#ebebeb] h-auto w-full px-36">
-      <div className="pt-20 pb-20">
+    <div className="w-full h-full">
+      <CheckoutNav />
+    <div className="bg-[#ebebeb] h-auto w-full lg:px-36 max-sm:px-4">
+      <div className="pt-20 max-sm:pt-6 pb-20">
         <div className="flex">
-          <button className="w-14 h-14 bg-[#231f20] text-white p-4 text-[1.5rem]">
+          <button className="w-14 border duration-300 h-14 bg-[#231f20] text-white hover:text-[#231f20] hover:bg-[#ebebeb] p-4 text-[1.5rem]">
             <HiOutlineArrowLeft className="" />
           </button>
           <p className="pl-4 font-semibold text-2xl uppercase text-[#231f20] pt-4">
@@ -73,7 +76,7 @@ const page = () => {
                 placeholder="First name"
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
-                className="w-44 bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] pb-2 border-[#746d6d46] text-black"
+                className="lg:w-44 max-sm:w-full bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] pb-2 border-[#746d6d46] text-black"
               />
             </form>
             <form action="">
@@ -82,7 +85,7 @@ const page = () => {
                 placeholder="Last name"
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
-                className="w-44 bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] border-[#746d6d46] text-black pb-2 ml-6"
+                className="w-44 max-sm:w-full bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] border-[#746d6d46] text-black pb-2 lg:ml-6 mt-8"
               />
             </form>
             <form action="">
@@ -91,7 +94,7 @@ const page = () => {
                 placeholder="Phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-44 bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] border-[#746d6d46] text-black pb-2 ml-6"
+                className="w-44 max-sm:w-full bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] border-[#746d6d46] text-black pb-2 lg:ml-6 mt-8"
               />
             </form>
             <form action="">
@@ -100,7 +103,7 @@ const page = () => {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-44 bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] border-[#746d6d46] text-black pb-2 ml-6"
+                className="w-44 max-sm:w-full bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] border-[#746d6d46] text-black pb-2 lg:ml-6 mt-8"
               />
             </form>
             <form action="">
@@ -109,7 +112,7 @@ const page = () => {
                 placeholder="State"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-44 bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] border-[#746d6d46] text-black pb-2 ml-6"
+                className="w-44 max-sm:w-full bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b outline-none hover:border-[#231f20] border-[#746d6d46] text-black pb-2 lg:ml-6 mt-8"
               />
             </form>
           </div>
@@ -119,16 +122,16 @@ const page = () => {
               placeholder="Street Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-60 bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b pt-8 outline-none hover:border-[#231f20] pb-2 border-[#746d6d46] text-black"
+              className="w-60 max-sm:w-full bg-transparent text-[12px] max-sm:text-xl max-sm:pb-2 border-b pt-8 outline-none hover:border-[#231f20] pb-2 border-[#746d6d46] text-black"
             />
           </form>
         </div>
-        <div className="w-full mt-32 flex border-t border-black">
-          <div className="w-[40%] pt-6">
+        <div className="w-full mt-32 max-sm:mt-10  lg:flex border-t border-black">
+          <div className="w-[40%] max-sm:w-full pt-6">
             <p className="font-semibold text-2xl uppercase text-[#231f20] pt-4">
               02. Your order
             </p>
-            <div className="w-[96%] mt-8 h-[25rem] overflow-auto">
+            <div className="w-[96%] mt-8 max-sm:h-[18rem] h-[25rem] overflow-auto">
               {cartProducts?.map(({ product }) => {
                 return (
                   <div className="pt-2 flex h-28" key={product._id}>
@@ -171,7 +174,7 @@ const page = () => {
               })}
             </div>
           </div>
-          <div className="w-[60%] pt-6 border-l-8 border-[#231f20]">
+          <div className="w-[60%] max-sm:w-full pt-6 border-l-8 border-[#231f20]">
             <div className="h-36">
               <p className="pl-8 font-semibold text-2xl uppercase text-[#231f20] pt-4">
                 03. Delivery method
@@ -191,7 +194,7 @@ const page = () => {
               </p>
             </div>
             <div className="border-t h-auto border-black justify-end">
-              <div className="w-[70%] ml-[30%] pt-8 h-80">
+              <div className="w-[70%] max-sm:ml-2 max-sm:w-full lg:ml-[30%] pt-8 h-80">
                 <ul className="uppercase flex w-full text-[12px] justify-between">
                   <li>Delivery Fee</li>
                   <li>₦ 1500.00</li>
@@ -226,7 +229,7 @@ const page = () => {
                 onSuccess={handleSuccess}
                 onClose={handleClose}
                 {...config}
-                className="border mt-8 cursor-pointer w-full py-5 tiny text-white hover:text-[#231f20] hover:bg-[#ebebeb] ease-in-out	duration-200 bg-[#231f20]"
+                className="border mt-8 cursor-pointer w-full py-5 tiny text-white hover:text-[#231f20] hover:bg-[#ebebeb] ease-in-out	duration-300  bg-[#231f20]"
                 >
                   PLACE ORDER
                 </PaystackButton>
@@ -235,6 +238,7 @@ const page = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { CiMenuBurger } from "react-icons/ci";
 import { LiaTimesSolid } from "react-icons/lia";
 import { PiShoppingCartThin } from "react-icons/pi";
 import SearchBar from "./SearchBar";
@@ -36,6 +37,18 @@ const Navbar = () => {
   const toggleStyle = () => {
     setIsStyled(!isStyled);
   };
+
+    const [isStyle, setIsStyle] = useState(false);
+  
+    const toggleStyles = () => {
+      setIsStyle(!isStyle);
+    };
+  
+    const [isStyles, setIsStyles] = useState(false);
+  
+    const toggleStyless = () => {
+      setIsStyles(!isStyles);
+    };
   return (
     <div>
       <div className="w-[98%] max-sm:w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
@@ -78,49 +91,59 @@ const Navbar = () => {
               </div>
             </div>
             <div
-                style={{
-                  width: isStyled ? "28%" : "0",
-                  opacity: isStyled ? "1" : "0",
-                  transition: "width 1.2s ease-in-out",
-                  animationDelay: "opacity 2s ease-in-out",
-                }}
-                className="absolute top-[4rem] right-0 bg-[#ebebeb] h-[85vh] p-2 w-[0%] border overflow-hidden"
-              >
-                <Do />
-            </div>        
+              style={{
+                width: isStyled ? "28%" : "0",
+                opacity: isStyled ? "1" : "0",
+                transition: "width 1.2s ease-in-out",
+                animationDelay: "opacity 2s ease-in-out",
+              }}
+              className="absolute top-[4rem] right-0 bg-[#ebebeb] h-[85vh] p-2 w-[0%] border overflow-hidden"
+            >
+              <Do />
+            </div>
           </div>
         </div>
 
         <ul className="w-[30%] h-full lg:hidden md:hidden tiny flex relative">
           <div className="w-[50%] text-center bord">
             <Link href="/">
-            <p className="pt-2 text-3xl text-[#231f20] font-bold">nb</p>
+              <p className="pt-2 text-3xl text-[#231f20] font-bold">nb</p>
             </Link>
           </div>
 
           <SearchBar />
-  
         </ul>
         <div className="show block lg:hidden md:hidden w-[40%]">
-          <div className="ml-[40%] h-full maker pt-5 hove bord text-center">
-            <label className="burger">
-              <input type="checkbox" id="burger" />
-              <span></span>
-              <span></span>
-            </label>
-          </div>
-          <div className="hidy">
-            <ul className="border bg-[#231f20]">
-              <li className="w-full h-[52px] pt-5 text-[#ebebed] hovee text-center">
-                SHOP
-              </li>
-              <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center">
-                ABOUT
-              </li>
-              <li className="w-full h-[52px] pt-5 hovee text-[#ebebed] text-center">
-                JOURNAL
-              </li>
-            </ul>
+          <div className=" h-full maker pt-1 bord text-center">
+            <button
+              onClick={toggleStyles}
+              className="lg:hidden text-black h-full text-center"
+            >
+              {!isStyle ? (
+                <CiMenuBurger className="w-6 h-6  transition-all duration-500" />
+              ) : (
+                <LiaTimesSolid className="w-6 h-6 transition-all duration-500" />
+              )}
+            </button>
+            <div
+              className="absolute lg:hidden z-10 left-0 top-[-19vh] bg-[#231f20] w-[41%] ml-[29.5%] mx-auto text-center overflow-hidden"
+              style={{
+                height: isStyle ? "19vh" : "0px",
+                transition: "height 0.5s ease-in-out",
+              }}
+            >
+              <ul className=" bg-[#231f20]">
+                <li className="w-full h-full py-4 text-[#ebebed] hovee text-center">
+                  <Link href="/shop">SHOP</Link>
+                </li>
+                <li className="w-full h-[52px] border-t border-black py-4 hovee text-[#ebebed] text-center">
+                  <Link href="/about">ABOUT</Link>
+                </li>
+                <li className="w-full h-[52px] border-t border-black py-4 hovee text-[#ebebed] text-center">
+                  <Link href="/contact">CONTACT</Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -140,27 +163,38 @@ const Navbar = () => {
               </div>
             </div>
             <div
-                style={{
-                  width: isStyled ? "100%" : "0",
-                  opacity: isStyled ? "1" : "0",
-                  transition: "width 1.2s ease-in-out",
-                  animationDelay: "opacity 2s ease-in-out",
-                }}
-                className="absolute top-[-76vh] right-0 bg-[#ebebeb] h-[75vh] p-2 w-[0%] border overflow-hidden"
-              >
-                <Do />
-            </div>        
+              style={{
+                width: isStyled ? "100%" : "0",
+                opacity: isStyled ? "1" : "0",
+                transition: "width 1.2s ease-in-out",
+                animationDelay: "opacity 2s ease-in-out",
+              }}
+              className="absolute top-[-76vh] right-0 bg-[#ebebeb] h-[75vh] p-2 w-[0%] border overflow-hidden"
+            >
+              <Do />
+            </div>
           </div>
         </div>
       </div>
       <div
-        style={{   
+        style={{
           position: isStyled ? "fixed" : "absolute",
           opacity: isStyled ? "1" : "0",
           height: isStyled ? "100vh" : "0",
           display: isStyled ? "block" : "none",
         }}
         onClick={toggleStyle}
+        className="hidden
+          top-0 left-0 z-10 w-full bg-[#00000078]"
+      ></div>
+         <div
+        style={{
+          position: isStyle ? "fixed" : "absolute",
+          opacity: isStyle ? "1" : "0",
+          height: isStyle ? "100vh" : "0",
+          display: isStyle ? "block" : "none",
+        }}
+        onClick={toggleStyles}
         className="hidden
           top-0 left-0 z-10 w-full bg-[#00000078]"
       ></div>

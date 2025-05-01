@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { CiSearch } from "react-icons/ci";
 import { CiMenuBurger } from "react-icons/ci";
 import { LiaTimesSolid } from "react-icons/lia";
 import { PiShoppingCartThin } from "react-icons/pi";
@@ -9,7 +10,7 @@ import SearchBar from "./SearchBar";
 import CartIcon from "./CartIcon";
 import Do from "./Do";
 
-const Nav = () => {
+const CheckoutNav = () => {
   const [showi, setShowi] = useState(true);
   const controlNavbar = () => {
     if (window.scrollY > 10) {
@@ -19,23 +20,17 @@ const Nav = () => {
     }
   };
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isStyle, setIsStyle] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const toggleStyles = () => {
+    setIsStyle(!isStyle);
   };
 
-    const [isStyle, setIsStyle] = useState(false);
-  
-    const toggleStyles = () => {
-      setIsStyle(!isStyle);
-    };
-  
-    const [isStyles, setIsStyles] = useState(false);
-  
-    const toggleStyless = () => {
-      setIsStyles(!isStyles);
-    };
+  const [isStyles, setIsStyles] = useState(false);
+
+  const toggleStyless = () => {
+    setIsStyles(!isStyles);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
@@ -54,10 +49,9 @@ const Nav = () => {
   const toggleStyle = () => {
     setIsStyled(!isStyled);
   };
-
   return (
-    <div className={`active ${showi && "hidden"}`}>
-      <div className="w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
+    <div>
+      <div className="w-[98%] max-sm:w-[98%] fixed ml-[1%] mt-3 z-[999] bottom-5 bg-[#03a77e] text-center h-[52px] flex border">
         <ul className="w-[30%] h-full tiny flex max-sm:hidden relative">
           <div className="show block w-[33%]">
             <Link href={"/shop"}>
@@ -69,31 +63,22 @@ const Nav = () => {
               </button>
             </Link>
           </div>
-          <li className="w-[33%] h-full pt-5 hove bord text-center">
-            <Link href="/about">ABOUT</Link>
-          </li>
-          <div className="show block w-[30%]">
-            <li className="w-full h-full pt-5 hove relative z-[999] bord text-center">
-              CONTACT
-            </li>
-          </div>
+          <li className="w-[33%] h-full pt-5 hove bord text-center">ABOUT</li>
+          <li className="w-[33%] h-full pt-5 hove bord text-center">JOURNAL</li>
         </ul>
         <div className="w-[40%] text-center max-sm:hidden bord">
-          <p className="pt-3 text-[#231f20ba] font-semibold">
+          <p className="p-3">
             <Link href="/">nuckles daan</Link>
           </p>
         </div>
         <div className="w-[30%] max-sm:hidden flex">
           <p className="w-[55%] h-full pt-5 tiny hove bord text-center">
-            <Link href="/contact">CONTACT</Link>
+            PROFESSIONAL
           </p>
-
           <div className="w-[15%] h-full bord text-center hove">
             <p className="pt-5 tiny">EN</p>
           </div>
-
           <SearchBar />
-
           <div className="w-[15%] h-full">
             <div className="w-full h-full hove" onClick={toggleStyle}>
               <div className="h-full w-full flex">
@@ -128,20 +113,20 @@ const Nav = () => {
 
           <SearchBar />
         </ul>
-        <div className="lg:hidden md:hidden w-[40%]">
-          <div className=" h-full pt-1 bord text-center">
+        <div className="show block lg:hidden md:hidden w-[40%]">
+          <div className=" h-full maker pt-1 hove bord text-center active:bg-black">
             <button
               onClick={toggleStyles}
-              className="lg:hidden text-black h-full text-center"
+              className="lg:hidden text-white h-full text-center"
             >
               {!isStyle ? (
-                <CiMenuBurger className="w-6 h-6  transition-all text-black duration-500" />
+                <CiMenuBurger className="w-6 h-6  transition-all duration-500" />
               ) : (
-                <LiaTimesSolid className="w-6 h-6 transition-all text-black duration-500" />
+                <LiaTimesSolid className="w-6 h-6 transition-all duration-500" />
               )}
             </button>
             <div
-              className="absolute lg:hidden z-10 left-0 top-[-19vh] bg-[#231f20] w-[40%] ml-[30%] mx-auto text-center overflow-hidden"
+              className="absolute lg:hidden z-10 left-0 top-[-19vh] bg-[#231f20] w-[41%] ml-[29.5%] mx-auto text-center overflow-hidden"
               style={{
                 height: isStyle ? "19vh" : "0px",
                 transition: "height 0.5s ease-in-out",
@@ -167,7 +152,10 @@ const Nav = () => {
             <p className="pt-5 tiny">EN</p>
           </div>
           <div className="w-[50%] h-full">
-            <div className="w-full pl-2 h-full hove" onClick={toggleStyle}>
+            <div
+              className="w-full active:bg-black pl-2 h-full hove"
+              onClick={toggleStyle}
+            >
               <div className="h-full w-full flex">
                 {!isStyled ? (
                   <PiShoppingCartThin className="w-6 h-6 mt-4 md:h-4 md:w-4 max-md:ml-1 max-md:mt-[0.7rem] ml-[1rem]" />
@@ -202,7 +190,7 @@ const Nav = () => {
         className="hidden
           top-0 left-0 z-10 w-full bg-[#00000078]"
       ></div>
-         <div
+      <div
         style={{
           position: isStyle ? "fixed" : "absolute",
           opacity: isStyle ? "1" : "0",
@@ -217,4 +205,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default CheckoutNav;
