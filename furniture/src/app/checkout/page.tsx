@@ -32,6 +32,27 @@ const page = () => {
     console.log('Payment closed');
   };
 
+  const [windowSize, setWindowSize] = useState(()=> {
+    if (typeof window === "undefined") {
+      return { width: 0, height: 0};
+    }
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    }
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const config = {
     reference: (new Date()).getTime().toString(),
   };
@@ -46,6 +67,14 @@ const page = () => {
 
   const price = getTotalFeePrice();
 
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+      setIsClient(true);
+    }, []);
+    if (!isClient) {
+      return <Loading />;
+    }
 
   return (
     <div className="w-full h-full">

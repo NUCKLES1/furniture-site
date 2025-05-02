@@ -33,7 +33,7 @@ const Do = () => {
   const [isClient, setIsClient] = useState(false);
 
   const handleCheckout=()=>{
-    toast.error('Checkout on process')
+    toast.success('Checkout on process')
   }
 
   useEffect(() => {
