@@ -32,27 +32,11 @@ const page = () => {
     console.log('Payment closed');
   };
 
-  const [windowSize, setWindowSize] = useState(()=> {
-    if (typeof window === "undefined") {
-      return { width: 0, height: 0};
-    }
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    }
-  });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
+    if (typeof window !== "undefined") {
+      const height = window.innerHeight
     }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+ 
   const config = {
     reference: (new Date()).getTime().toString(),
   };
