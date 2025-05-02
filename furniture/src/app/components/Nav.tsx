@@ -141,9 +141,9 @@ const Nav = () => {
               )}
             </button>
             <div
-              className="absolute lg:hidden z-10 left-0 top-[-19vh] bg-[#231f20] w-[40%] ml-[30%] mx-auto text-center overflow-hidden"
+              className="absolute lg:hidden z-10 left-0 top-[-20vh] bg-[#231f20] w-[40%] ml-[30%] mx-auto text-center overflow-hidden"
               style={{
-                height: isStyle ? "19vh" : "0px",
+                height: isStyle ? "20vh" : "0px",
                 transition: "height 0.5s ease-in-out",
               }}
             >

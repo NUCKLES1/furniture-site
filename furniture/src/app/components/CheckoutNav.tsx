@@ -114,7 +114,7 @@ const CheckoutNav = () => {
           <SearchBar />
         </ul>
         <div className="show block lg:hidden md:hidden w-[40%]">
-          <div className=" h-full maker pt-1 hove bord text-center active:bg-black">
+          <div className=" h-full maker pt-1 hove bord text-center">
             <button
               onClick={toggleStyles}
               className="lg:hidden text-white h-full text-center"
@@ -126,9 +126,9 @@ const CheckoutNav = () => {
               )}
             </button>
             <div
-              className="absolute lg:hidden z-10 left-0 top-[-19vh] bg-[#231f20] w-[41%] ml-[29.5%] mx-auto text-center overflow-hidden"
+              className="absolute lg:hidden z-10 left-0 top-[-20vh] bg-[#231f20] w-[41%] ml-[29.5%] mx-auto text-center overflow-hidden"
               style={{
-                height: isStyle ? "19vh" : "0px",
+                height: isStyle ? "20vh" : "0px",
                 transition: "height 0.5s ease-in-out",
               }}
             >
@@ -153,7 +153,7 @@ const CheckoutNav = () => {
           </div>
           <div className="w-[50%] h-full">
             <div
-              className="w-full active:bg-black pl-2 h-full hove"
+              className="w-full pl-2 h-full hove"
               onClick={toggleStyle}
             >
               <div className="h-full w-full flex">
