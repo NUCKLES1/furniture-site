@@ -69,7 +69,7 @@ const Do = () => {
               {cartProducts?.map(({ product }) => {
                 return (
                   <div
-                    className="p-2 flex border-b border-black h-26"
+                    className="p-2 flex border-b border-black h-26 overflow-hidden"
                     key={product._id}
                   >
                     {product?.images && (
@@ -87,8 +87,8 @@ const Do = () => {
                         />
                       </Link>
                     )}
-                    <div className="w-full pt-2 pl-2">
-                      <div className="w-full flex justify-between">
+                    <div className="w-full pt-2 pl-2 overflow-hidden">
+                      <div className="w-full flex justify-between overflow-hidden">
                         <div>
                           <p className="font-semibold leading-3">
                             {product.title}

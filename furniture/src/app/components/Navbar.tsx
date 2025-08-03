@@ -38,17 +38,17 @@ const Navbar = () => {
     setIsStyled(!isStyled);
   };
 
-    const [isStyle, setIsStyle] = useState(false);
-  
-    const toggleStyles = () => {
-      setIsStyle(!isStyle);
-    };
-  
-    const [isStyles, setIsStyles] = useState(false);
-  
-    const toggleStyless = () => {
-      setIsStyles(!isStyles);
-    };
+  const [isStyle, setIsStyle] = useState(false);
+
+  const toggleStyles = () => {
+    setIsStyle(!isStyle);
+  };
+
+  const [isStyles, setIsStyles] = useState(false);
+
+  const toggleStyless = () => {
+    setIsStyles(!isStyles);
+  };
   return (
     <div>
       <div className="w-[98%] max-sm:w-[98%] fixed ml-[1%] mt-3 z-[999] max-sm:bottom-5 bg-[#ebebeb] text-center h-[52px] flex border">
@@ -187,7 +187,7 @@ const Navbar = () => {
         className="hidden
           top-0 left-0 z-10 w-full bg-[#00000078]"
       ></div>
-         <div
+      <div
         style={{
           position: isStyle ? "fixed" : "absolute",
           opacity: isStyle ? "1" : "0",

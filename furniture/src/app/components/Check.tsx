@@ -10,10 +10,12 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { PaystackButton } from "react-paystack";
 import CheckoutQuantity from "../components/CheckoutQuantity";
-import router, { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import CheckoutNav from "../components/CheckoutNav";
 
 const page = () => {
+  const router = useRouter();
+
   const publicKey = "pk_test_a1bf2492215b15bd9d28015555cd369f3e5bb339";
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -22,12 +24,18 @@ const page = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
 
+
+
+  const resetCart = useCartStore((state) => state.resetCart);
+
   const handleSuccess = () => {
-    // Payment successful, navigate to another page
+    // Navigate to the cart page after successful payment
     router.push("/cart");
+    resetCart();
   };
 
   const handleClose = () => {
+    // Navigate back to the checkout page if the payment process is closed
     router.push("/checkout");
   };
 
@@ -60,9 +68,11 @@ const page = () => {
       <div className="bg-[#ebebeb] h-auto w-full lg:px-36 max-sm:px-4">
         <div className="pt-20 max-sm:pt-6 pb-20">
           <div className="flex">
-            <button className="w-14 border duration-300 h-14 bg-[#231f20] text-white hover:text-[#231f20] hover:bg-[#ebebeb] p-4 text-[1.5rem]">
-              <HiOutlineArrowLeft className="" />
-            </button>
+            <Link href="/">
+              <button className="w-14 border duration-300 h-14 bg-[#231f20] text-white hover:text-[#231f20] hover:bg-[#ebebeb] p-4 text-[1.5rem]">
+                <HiOutlineArrowLeft className="" />
+              </button>
+            </Link>
             <p className="pl-4 font-semibold text-2xl uppercase text-[#231f20] pt-4">
               01. Billing details
             </p>

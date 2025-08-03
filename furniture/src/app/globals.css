@@ -60,6 +60,7 @@
   background-color: #231f20;
   transition: 0.3s ease-in-out;
   cursor: pointer;
+  color: #ebebed;
 }
 
 .hovering:hover {
